@@ -2,7 +2,27 @@ import styled from 'styled-components';
 
 import BannerImage from '../../assets/banner.png';
 
-export const Banner = styled.div`
+export const Container = styled.main`
+  section {
+    padding: 0 2rem;
+  }
+
+  section + section {
+    margin-bottom: 5rem;
+  }
+
+  article ~ article {
+    margin-top: 1.5rem;
+  }
+  
+
+  .objectives {
+    background: ${({ theme }) => theme.colors.gray[100]};
+    margin-bottom: 2rem;
+  }
+`;
+
+export const Banner = styled.section`
   display: flex;
   align-items: center;
   width: 100%;
@@ -48,5 +68,33 @@ export const Banner = styled.div`
     .banner-text h1 {
       width: 90%;
     }
+
+    html {
+      font-size: 70%;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    html {
+      font-size: 50%;
+    }
+  }
+`;
+
+export const TitleSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  margin-bottom: 2rem;
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
+
+  h2 {
+    font-size: 2rem;
   }
 `;

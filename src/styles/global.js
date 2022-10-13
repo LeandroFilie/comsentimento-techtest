@@ -9,7 +9,7 @@ export default createGlobalStyle`
   }
 
   body{
-    background: ${({ theme }) => theme.colors.gray[50]};
+    background: #FFFFFF;
     color: ${({ theme }) => theme.colors.gray[900]};
     font-size: 16px;
   }
@@ -37,18 +37,6 @@ export default createGlobalStyle`
   @media (max-width: 720px) {
     html {
       font-size: 87.5%;
-    }
-  }
-
-  @media (max-width: 650px) {
-    html {
-      font-size: 70%;
-    }
-  }
-
-  @media (max-width: 400px) {
-    html {
-      font-size: 50%;
     }
   }
 `;

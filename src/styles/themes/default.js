@@ -3,6 +3,7 @@ export default {
     primary: '#604FFF',
     secondary: '#00FFBE',
     danger: '#B91C1C',
+    green: '#16a34a',
 
     gray: {
       50: '#FAFAFA',

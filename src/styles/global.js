@@ -19,6 +19,10 @@ export default createGlobalStyle`
     color: ${({ theme }) => theme.colors.gray[900]};
   }
 
+  ul {
+    list-style: none;
+  }
+
   button {
     cursor: pointer;
     outline: none;
@@ -29,7 +33,7 @@ export default createGlobalStyle`
         font-size: 93.75%;
       }
   }
-  
+
   @media (max-width: 720px) {
     html {
       font-size: 87.5%;

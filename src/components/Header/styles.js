@@ -4,9 +4,10 @@ import styled from 'styled-components';
 export const Container = styled.header`
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
-  padding: 1rem 10rem;
-  
+  justify-content: space-between; 
+  max-width: 1200px;
+  padding: 1rem 5rem;
+  margin: 0 auto;
 `;
 
 export const Menu = styled.ul`

@@ -39,4 +39,16 @@ export default createGlobalStyle`
       font-size: 87.5%;
     }
   }
+
+  @media (max-width: 650px) {
+    html {
+      font-size: 70%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    html {
+      font-size: 50%;
+    }
+  }
 `;

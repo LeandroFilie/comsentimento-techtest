@@ -23,7 +23,7 @@ export default function Login() {
           <input type="password" />
         </label>
 
-        <Button>Entrar</Button>
+        <Button variant="form">Entrar</Button>
       </Form>
     </Container>
   );

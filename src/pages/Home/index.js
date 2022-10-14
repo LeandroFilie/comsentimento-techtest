@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import {
-  Banner, TitleSection, ContainerProgram, ContainerNotice, Button, Container,
+  Banner, TitleSection, ContainerProgram, ContainerNotice, Container,
 } from './styles';
+
+import { Button } from '../../components/Button';
 
 import { Footer } from '../../components/Footer';
 
@@ -21,7 +23,7 @@ export default function Home() {
           <a href="#program">O Programa</a>
           <span />
         </li>
-        <Link to="/login"><Button type="button">Área Administrativa</Button></Link>
+        <Link to="/login"><Button variant="link" type="button">Área Administrativa</Button></Link>
       </Header>
 
       <Banner>

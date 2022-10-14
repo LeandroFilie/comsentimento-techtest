@@ -9,11 +9,11 @@ export default function Header() {
       <Link to="/"><img src={Logo} alt="Comsentimento" /></Link>
       <Menu>
         <li>
-          Editais
+          <a href="#notice">Editais</a>
           <span />
         </li>
         <li>
-          Objetivos
+          <a href="#program">O Programa</a>
           <span />
         </li>
         <Link to="/login"><Button type="button">Área Administrativa</Button></Link>

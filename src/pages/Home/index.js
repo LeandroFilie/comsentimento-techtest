@@ -20,7 +20,7 @@ export default function Home() {
           </div>
         </Banner>
 
-        <ContainerNotice>
+        <ContainerNotice id="notice">
           <TitleSection>
             <img src={PlusIcon} alt="Icon" />
             <h2>Editais de Linhas de Pesquisa</h2>
@@ -35,7 +35,7 @@ export default function Home() {
           <Edital name="Extração de relações temporais em textos clínicos" isOpened />
         </ContainerNotice>
 
-        <ContainerProgram>
+        <ContainerProgram id="program">
           <TitleSection>
             <img src={PlusIcon} alt="Icon" />
             <h2>O Programa</h2>

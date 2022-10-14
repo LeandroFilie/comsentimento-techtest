@@ -8,6 +8,10 @@ export default createGlobalStyle`
     font-family: 'League Spartan', sans-serif;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body{
     background: #FFFFFF;
     color: ${({ theme }) => theme.colors.gray[900]};

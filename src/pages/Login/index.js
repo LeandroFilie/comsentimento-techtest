@@ -3,6 +3,7 @@ import { Container, Header, Form } from './styles';
 
 import Logo from '../../assets/logo.svg';
 import { Button } from '../../components/Button';
+import { Input } from '../../components/Input';
 
 export default function Login() {
   return (
@@ -15,12 +16,12 @@ export default function Login() {
       <Form>
         <label>
           Endereço de E-mail
-          <input type="text" />
+          <Input variant="light" type="text" placeholder="email@example.com" />
         </label>
 
         <label>
           Sua Senha
-          <input type="password" />
+          <Input variant="light" type="password" placeholder="********" />
         </label>
 
         <Button variant="form">Entrar</Button>

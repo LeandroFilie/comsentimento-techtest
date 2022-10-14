@@ -47,16 +47,4 @@ export const Form = styled.form`
     font-size: 1.175rem;
     width: 100%;
   }
-
-  input {
-    background: ${({ theme }) => theme.colors.gray[50]};
-    height: 48px;
-    border: none;
-    border-radius: 4px;
-    padding: 12px 16px;
-    font-size: 1.125rem;
-    width: 100%;
-
-    
-  }
 `;

@@ -3,23 +3,7 @@ import styled from 'styled-components';
 import BannerImage from '../../assets/banner.png';
 
 export const Container = styled.main`
-  section {
-    padding: 0 2rem;
-  }
 
-  section + section {
-    margin-bottom: 5rem;
-  }
-
-  article ~ article {
-    margin-top: 1.5rem;
-  }
-  
-
-  .objectives {
-    background: ${({ theme }) => theme.colors.gray[100]};
-    margin-bottom: 2rem;
-  }
 `;
 
 export const Banner = styled.section`
@@ -36,16 +20,16 @@ export const Banner = styled.section`
     margin-top: -54px;
     max-width: 1200px;
     margin: 0 auto;
-  }
 
-  .banner-text h1 {
-    font-size: 4rem;
-    width: 40%;
-    margin-left: 2rem;
-    font-weight: 600;
-    letter-spacing: 0.2rem;
+    h1 {
+      font-size: 3.75rem;
+      width: 40%;
+      margin-left: 7rem;
+      font-weight: 600;
+      letter-spacing: 0.2rem;
 
-    color: ${({ theme }) => theme.colors.gray[50]};
+      color: ${({ theme }) => theme.colors.gray[50]};
+    }
   }
 
   @media (max-width: 1200px) {
@@ -62,21 +46,22 @@ export const Banner = styled.section`
 
   @media (max-width: 650px) {
     background: ${({ theme }) => theme.colors.primary};
-    .banner-text{
-      margin-top: 0;
-    }
-    .banner-text h1 {
-      width: 90%;
-    }
 
-    html {
-      font-size: 70%;
+    .banner-text{
+      margin: 0 auto;
+      
+      h1 {
+        width: 90%;
+        font-size: 2rem;
+        margin: 0;
+      }
     }
   }
-  
-  @media (max-width: 400px) {
-    html {
-      font-size: 50%;
+
+  @media (max-width: 450px) {
+    .banner-text h1 {
+      width: 90%;
+      font-size: 1 !important;
     }
   }
 `;
@@ -86,8 +71,8 @@ export const TitleSection = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-
-  margin-bottom: 2rem;
+  margin: 2rem auto;
+  margin-top: 0;
 
   img {
     width: 25px;
@@ -96,5 +81,48 @@ export const TitleSection = styled.div`
 
   h2 {
     font-size: 2rem;
+    text-align: center;
   }
+`;
+
+export const ContainerEditais = styled.section`
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+`;
+
+export const ContainerProgram = styled.section`
+  background: ${({ theme }) => theme.colors.gray[100]};
+  padding: 5rem 2rem;
+  margin-bottom: 5rem;
+  position: relative;
+
+  .content {
+    display: flex;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0 auto;
+
+    max-width: 1200px;
+
+    p + p {
+      margin-top: 2rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+
+      img{
+        width: 10px;
+        height: 10px;
+        margin-right: 8px;
+      }
+    }
+
+    @media (max-width: 700px){
+      flex-direction: column;
+    }
+  }
+
 `;

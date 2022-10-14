@@ -18,6 +18,10 @@ export const Container = styled.article`
     font-weight: 500;
   }
 
+  & + & {
+    margin-top: 1rem;
+  }
+
   .status{
     color: ${({ theme, isOpened }) => (isOpened ? theme.colors.green : theme.colors.danger)};
 

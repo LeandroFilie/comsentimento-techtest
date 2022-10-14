@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 import BannerImage from '../../assets/banner.png';
 
+export const Container = styled.main`
+  position: relative;
+`;
+
 export const Button = styled.button`
   padding: 0.75rem 1rem;
   background: transparent;
@@ -108,8 +112,7 @@ export const ContainerNotice = styled.section`
 export const ContainerProgram = styled.section`
   background: ${({ theme }) => theme.colors.gray[100]};
   padding: 5rem 2rem;
-  margin-bottom: 5rem;
-  position: relative;
+  padding-bottom: calc(10rem - 32px);
 
   .content {
     display: flex;

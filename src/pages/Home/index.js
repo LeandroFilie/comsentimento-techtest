@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import {
-  Banner, TitleSection, ContainerProgram, ContainerNotice, Button,
+  Banner, TitleSection, ContainerProgram, ContainerNotice, Button, Container,
 } from './styles';
 
 import { Footer } from '../../components/Footer';
-import Edital from '../../components/Notice';
 
 import PlusIcon from '../../assets/plus.png';
+import Notice from '../../components/Notice';
 
 export default function Home() {
   return (
-    <>
+    <Container>
       <Header>
         <li>
           <a href="#notice">Editais</a>
@@ -36,13 +36,13 @@ export default function Home() {
           <h2>Editais de Linhas de Pesquisa</h2>
         </TitleSection>
 
-        <Edital name="Extração de relações temporais em textos clínicos" isOpened />
+        <Notice name="Extração de relações temporais em textos clínicos" isOpened />
 
-        <Edital name="Extração de relações temporais em textos clínicos" isOpened />
+        <Notice name="Extração de relações temporais em textos clínicos" isOpened />
 
-        <Edital name="Extração de relações temporais em textos clínicos" isOpened={false} />
+        <Notice name="Extração de relações temporais em textos clínicos" isOpened={false} />
 
-        <Edital name="Extração de relações temporais em textos clínicos" isOpened />
+        <Notice name="Extração de relações temporais em textos clínicos" isOpened />
       </ContainerNotice>
 
       <ContainerProgram id="program">
@@ -97,6 +97,6 @@ export default function Home() {
 
       </ContainerProgram>
       <Footer />
-    </>
+    </Container>
   );
 }

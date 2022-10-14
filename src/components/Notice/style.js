@@ -5,7 +5,7 @@ export const Container = styled.article`
   border-radius: 4px;
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   padding: 1.5rem 2rem;
   margin: 0 auto;
@@ -13,8 +13,7 @@ export const Container = styled.article`
 
   cursor: pointer;
 
-  p{
-    font-size: 1.125rem;
+  h3{
     font-weight: 500;
   }
 
@@ -22,13 +21,34 @@ export const Container = styled.article`
     margin-top: 1rem;
   }
 
+  .details{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    p{
+      font-size: 1rem;
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
   .status{
+    display: flex;
+    align-items: center;
+    gap: 8px;
     color: ${({ theme, isOpened }) => (isOpened ? theme.colors.green : theme.colors.danger)};
 
-    img{
-      width: 10px;
-      height: 10px;
-      margin-right: 8px;
+    span{
+      display: block;
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      background: ${({ theme, isOpened }) => (isOpened ? theme.colors.green : theme.colors.danger)};
     }
   }
 `;

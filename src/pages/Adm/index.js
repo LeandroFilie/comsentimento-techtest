@@ -7,8 +7,6 @@ import { Button } from '../../components/Button';
 
 import Notice from '../../components/Notice';
 
-import { Footer } from '../../components/Footer';
-
 export default function Adm() {
   return (
     <>
@@ -31,12 +29,8 @@ export default function Adm() {
           <Notice name="Extração de relações temporais em textos clínicos" isOpened />
 
           <Notice name="Extração de relações temporais em textos clínicos" isOpened={false} />
-
-          <Notice name="Extração de relações temporais em textos clínicos" isOpened />
         </ContainerNotice>
       </Container>
-
-      <Footer />
     </>
 
   );

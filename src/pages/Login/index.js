@@ -1,5 +1,30 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import { Container, Header, Form } from './styles';
+
+import Logo from '../../assets/logo.svg';
+import { Button } from '../../components/Button';
+
 export default function Login() {
   return (
-    <h1>Login</h1>
+    <Container>
+      <Header>
+        <img src={Logo} alt="Logo Comsentimento" />
+        <h1>Área Administrativa</h1>
+      </Header>
+
+      <Form>
+        <label>
+          Endereço de E-mail
+          <input type="text" />
+        </label>
+
+        <label>
+          Sua Senha
+          <input type="password" />
+        </label>
+
+        <Button>Entrar</Button>
+      </Form>
+    </Container>
   );
 }

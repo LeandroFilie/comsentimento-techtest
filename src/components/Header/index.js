@@ -8,8 +8,14 @@ export default function Header() {
     <Container>
       <Link to="/"><img src={Logo} alt="Comsentimento" /></Link>
       <Menu>
-        <li>Editais</li>
-        <li>Objetivos</li>
+        <li>
+          Editais
+          <span />
+        </li>
+        <li>
+          Objetivos
+          <span />
+        </li>
         <Link to="/login"><Button type="button">Área Administrativa</Button></Link>
       </Menu>
     </Container>

@@ -21,6 +21,26 @@ export const Menu = styled.ul`
 
   li {
     font-size: 1.075rem;
+    padding: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    cursor: pointer;
+
+    span{
+      height: 2px;
+      width: 0%;
+      background: ${({ theme }) => theme.colors.primary};
+      transition: all .5s;
+    }
+
+    &:hover{
+      span {
+        width: 100%;
+      }
+    }
+    
   }
 
   @media (max-width: 650px) {

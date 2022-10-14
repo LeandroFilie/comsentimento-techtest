@@ -8,6 +8,10 @@ export const Container = styled.header`
   max-width: 1200px;
   padding: 1rem 5rem;
   margin: 0 auto;
+
+  @media (max-width: 650px) {
+      padding: 1rem;
+  }
 `;
 
 export const Menu = styled.ul`
@@ -17,6 +21,10 @@ export const Menu = styled.ul`
 
   li {
     font-size: 1.075rem;
+  }
+
+  @media (max-width: 650px) {
+    display: none;
   }
 `;
 

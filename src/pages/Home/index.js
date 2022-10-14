@@ -1,10 +1,10 @@
 import Header from '../../components/Header';
 import {
-  Container, Banner, TitleSection, ContainerEditais, ContainerProgram,
+  Container, Banner, TitleSection, ContainerProgram, ContainerNotice,
 } from './styles';
 
 import { Footer } from '../../components/Footer';
-import Edital from '../../components/Edital';
+import Edital from '../../components/Notice';
 
 import PlusIcon from '../../assets/plus.png';
 
@@ -20,7 +20,7 @@ export default function Home() {
           </div>
         </Banner>
 
-        <ContainerEditais>
+        <ContainerNotice>
           <TitleSection>
             <img src={PlusIcon} alt="Icon" />
             <h2>Editais de Linhas de Pesquisa</h2>
@@ -33,7 +33,7 @@ export default function Home() {
           <Edital name="Extração de relações temporais em textos clínicos" isOpened={false} />
 
           <Edital name="Extração de relações temporais em textos clínicos" isOpened />
-        </ContainerEditais>
+        </ContainerNotice>
 
         <ContainerProgram>
           <TitleSection>

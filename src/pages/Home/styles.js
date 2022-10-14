@@ -85,7 +85,7 @@ export const TitleSection = styled.div`
   }
 `;
 
-export const ContainerEditais = styled.section`
+export const ContainerNotice = styled.section`
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;

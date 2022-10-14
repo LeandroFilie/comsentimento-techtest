@@ -16,12 +16,12 @@ export default function Login() {
       <Form>
         <label>
           Endereço de E-mail
-          <Input variant="light" type="text" placeholder="email@example.com" />
+          <Input variant="login" type="text" placeholder="email@example.com" />
         </label>
 
         <label>
           Sua Senha
-          <Input variant="light" type="password" placeholder="********" />
+          <Input variant="login" type="password" placeholder="********" />
         </label>
 
         <Button variant="form">Entrar</Button>

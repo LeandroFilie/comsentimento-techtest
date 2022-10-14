@@ -24,7 +24,7 @@ export default function Login() {
           <Input variant="login" type="password" placeholder="********" />
         </label>
 
-        <Button variant="form">Entrar</Button>
+        <Button variant="default">Entrar</Button>
       </Form>
     </Container>
   );

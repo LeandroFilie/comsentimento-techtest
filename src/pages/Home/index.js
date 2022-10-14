@@ -23,7 +23,7 @@ export default function Home() {
           <a href="#program">O Programa</a>
           <span />
         </li>
-        <Link to="/login"><Button variant="link" type="button">Área Administrativa</Button></Link>
+        <Link to="/login"><Button variant="ghost" type="button">Área Administrativa</Button></Link>
       </Header>
 
       <Banner>

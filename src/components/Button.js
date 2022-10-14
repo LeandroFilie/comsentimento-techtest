@@ -1,25 +1,13 @@
 import styled, { css } from 'styled-components';
 
-export const Button = styled.button`
-  padding: 12px 16px;
-
-  border: none;
-  border-radius: 4px;
-
-  font-weight: 500;
-  font-size: 1rem;
-  
-
-  transition: all 0.2s;
-
-  ${({ variant }) => variant === 'form' && css`
+const buttonVariant = {
+  default: css`
     background: ${({ theme }) => theme.colors.secondary};
     color: ${({ theme }) => theme.colors.gray[900]};
     width: 100%;
     font-size: 1.175rem;
-  `}
-
-  ${({ variant }) => variant === 'link' && css`
+  `,
+  ghost: css`
     background: transparent;
     border: solid 2px ${({ theme }) => theme.colors.primary};
     color: ${({ theme }) => theme.colors.primary};
@@ -29,5 +17,18 @@ export const Button = styled.button`
       background: ${({ theme }) => theme.colors.primary};
       transition: all 0.2s;
     }
-  `}
+  `,
+};
+
+export const Button = styled.button`
+  padding: 12px 16px;
+  border: none;
+  border-radius: 4px;
+
+  font-weight: 500;
+  font-size: 1rem;
+
+  transition: all 0.2s;
+
+  ${({ variant }) => buttonVariant[variant] || buttonVariant.default};
 `;

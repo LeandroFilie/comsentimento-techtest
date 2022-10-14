@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
+
 import Header from '../../components/Header';
-import {
-  Banner, TitleSection, ContainerProgram, ContainerNotice, Container,
-} from './styles';
-
+import Notice from '../../components/Notice';
 import { Button } from '../../components/Button';
-
 import { Footer } from '../../components/Footer';
 
+import {
+  Banner, TitleSection, Description, ListNotices, Container,
+} from './styles';
+
 import PlusIcon from '../../assets/plus.png';
-import Notice from '../../components/Notice';
 
 export default function Home() {
   return (
@@ -32,7 +32,7 @@ export default function Home() {
         </div>
       </Banner>
 
-      <ContainerNotice id="notice">
+      <ListNotices id="notice">
         <TitleSection>
           <img src={PlusIcon} alt="Icon" />
           <h2>Editais de Linhas de Pesquisa</h2>
@@ -45,9 +45,9 @@ export default function Home() {
         <Notice name="Extração de relações temporais em textos clínicos" isOpened={false} />
 
         <Notice name="Extração de relações temporais em textos clínicos" isOpened />
-      </ContainerNotice>
+      </ListNotices>
 
-      <ContainerProgram id="program">
+      <Description id="program">
         <TitleSection>
           <img src={PlusIcon} alt="Icon" />
           <h2>O Programa</h2>
@@ -97,7 +97,7 @@ export default function Home() {
           </div>
         </div>
 
-      </ContainerProgram>
+      </Description>
       <Footer />
     </Container>
   );

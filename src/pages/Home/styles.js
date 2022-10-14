@@ -85,13 +85,13 @@ export const TitleSection = styled.div`
   }
 `;
 
-export const ContainerNotice = styled.section`
+export const ListNotices = styled.section`
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 `;
 
-export const ContainerProgram = styled.section`
+export const Description = styled.section`
   background: ${({ theme }) => theme.colors.gray[100]};
   padding: 5rem 2rem;
   padding-bottom: calc(10rem - 32px);

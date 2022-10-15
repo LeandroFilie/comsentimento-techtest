@@ -47,7 +47,7 @@ export default function Modal({ visible, setVisible, notice }) {
             <img src={plusIcon} alt="item" />
             Status:
             {' '}
-            {notice.noticeStatus}
+            {notice.noticeStatus === 'true' ? 'aberto' : 'fechado'}
           </p>
         </Content>
         <Footer>

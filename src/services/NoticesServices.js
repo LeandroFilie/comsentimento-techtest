@@ -1,9 +1,12 @@
-class NoticesService {
-  async listNotices() {
-    const response = await fetch('https://api.comsentimento.com.br/notices');
-    console.log(response);
+import HttpClient from './utils/HttpClient';
 
-    return response.json();
+class NoticesService {
+  constructor() {
+    this.httpClient = new HttpClient('https://api.comsentimento.com.br');
+  }
+
+  async listNotices() {
+    return this.httpClient.get('/notices');
   }
 }
 

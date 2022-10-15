@@ -8,10 +8,10 @@ export default function EditNotice() {
   return (
     <>
       <Header>
-        <li>
+        <a href="/">
           Sair
           <span />
-        </li>
+        </a>
       </Header>
 
       <Container>

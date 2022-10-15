@@ -19,12 +19,12 @@ export const Menu = styled.div`
   }
 `;
 
-export const Nav = styled.ul`
+export const Nav = styled.nav`
   display: flex;
   align-items: center;
   gap: 1.5rem;
 
-  li {
+  a {
     font-size: 1.075rem;
     padding: 0.5rem;
 

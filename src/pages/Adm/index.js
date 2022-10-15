@@ -12,10 +12,10 @@ export default function Adm() {
   return (
     <>
       <Header>
-        <li>
+        <a href="/">
           Sair
           <span />
-        </li>
+        </a>
       </Header>
 
       <Container>

@@ -25,14 +25,14 @@ export default function Home() {
       <Modal visible={modalVisible} setVisible={handleVisibleModal} />
 
       <Header>
-        <li>
-          <a href="#notice">Editais</a>
+        <a href="#notice">
+          Editais
           <span />
-        </li>
-        <li>
-          <a href="#program">O Programa</a>
+        </a>
+        <a href="#program">
+          O Programa
           <span />
-        </li>
+        </a>
         <Link to="/login"><Button variant="ghost" type="button">Área Administrativa</Button></Link>
       </Header>
 

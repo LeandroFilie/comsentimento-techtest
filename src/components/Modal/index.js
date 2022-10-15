@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
 import {
@@ -51,3 +51,8 @@ export default function Modal({ visible, setVisible }) {
     document.getElementById('modal-root'),
   );
 }
+
+Modal.propTypes = {
+  visible: PropTypes.bool.isRequired,
+  setVisible: PropTypes.func.isRequired,
+};

@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { Container } from './style';
 
 import editIcon from '../../assets/edit.svg';
@@ -41,3 +41,9 @@ export default function Notice({ name, isOpened, onClick }) {
     </Container>
   );
 }
+
+Notice.propTypes = {
+  name: PropTypes.string.isRequired,
+  isOpened: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+};

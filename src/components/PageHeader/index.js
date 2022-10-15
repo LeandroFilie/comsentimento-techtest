@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import arrow from '../../assets/arrow.svg';
 import { Title } from './style';
@@ -14,3 +14,7 @@ export default function PageHeader({ title }) {
     </Title>
   );
 }
+
+PageHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+};

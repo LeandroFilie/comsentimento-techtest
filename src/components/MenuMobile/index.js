@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { Container } from './style';
 
 import close from '../../assets/x.svg';
@@ -15,3 +15,9 @@ export default function MenuMobile({ visible, setVisible, items }) {
     </Container>
   );
 }
+
+MenuMobile.propTypes = {
+  visible: PropTypes.bool.isRequired,
+  setVisible: PropTypes.func.isRequired,
+  items: PropTypes.node.isRequired,
+};

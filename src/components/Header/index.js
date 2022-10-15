@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Container, Menu, Nav } from './styles';
 
 import logo from '../../assets/logo-horizontal-color.png';
@@ -32,3 +32,7 @@ export default function Header({ children }) {
     </Container>
   );
 }
+
+Header.propTypes = {
+  children: PropTypes.node.isRequired,
+};

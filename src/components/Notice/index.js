@@ -11,7 +11,7 @@ export default function Notice({
 
   if (!authenticate) {
     return (
-      <Container isOpened={isOpened} onClick={onOpenModal}>
+      <Container isOpened={isOpened} onClick={onOpenModal} authenticate={authenticate}>
         <h3>{name}</h3>
         <p className="status">
           <span />
@@ -22,7 +22,7 @@ export default function Notice({
   }
 
   return (
-    <Container isOpened={isOpened}>
+    <Container isOpened={isOpened} authenticate={authenticate}>
       <div className="details">
         <h3>{name}</h3>
         <p>{description}</p>

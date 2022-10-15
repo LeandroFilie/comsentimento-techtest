@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.article`
   background: ${({ theme }) => theme.colors.gray[100]};
@@ -51,4 +51,9 @@ export const Container = styled.article`
       background: ${({ theme, isOpened }) => (isOpened ? theme.colors.green : theme.colors.danger)};
     }
   }
+
+  ${({ authenticate }) => authenticate && css`
+    pointer-events: none;
+    cursor: not-allowed;
+  `}
 `;

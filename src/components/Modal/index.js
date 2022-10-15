@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
+import { useEffect } from 'react';
 import {
   Container, Overlay, Header, Content, Footer,
 } from './style';
@@ -13,6 +14,10 @@ export default function Modal({ visible, setVisible }) {
   if (!visible) {
     return null;
   }
+
+  useEffect(() => {
+    document.body.style.overflowY = visible ? 'hidden' : 'auto';
+  }, [visible]);
 
   return ReactDOM.createPortal(
     <Overlay>

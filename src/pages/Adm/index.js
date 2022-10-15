@@ -12,6 +12,10 @@ export default function Adm() {
   return (
     <>
       <Header>
+        <Link to="/adm">
+          Home
+          <span />
+        </Link>
         <a href="/">
           Sair
           <span />

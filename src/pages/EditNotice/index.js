@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import { Container } from './style';
 
@@ -8,6 +9,10 @@ export default function EditNotice() {
   return (
     <>
       <Header>
+        <Link to="/adm">
+          Home
+          <span />
+        </Link>
         <a href="/">
           Sair
           <span />

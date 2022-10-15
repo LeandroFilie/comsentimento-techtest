@@ -8,14 +8,30 @@ export const Container = styled.header`
 
 export const Menu = styled.div`
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between; 
   max-width: 1200px;
   padding: 1rem 5rem;
   margin: 0 auto;
 
+  .menu-icon{
+    border: none;
+    outline: none;
+    background: transparent;
+
+    img {
+      height: 28px;
+    }
+  }
+
   @media (max-width: 650px) {
       padding: 1rem;
+  }
+
+  @media (min-width: 900px) {
+    .menu-icon {
+      display: none;
+    }
   }
 `;
 
@@ -48,7 +64,7 @@ export const Nav = styled.nav`
     
   }
 
-  @media (max-width: 650px) {
+  @media (max-width: 900px) {
     display: none;
   }
 `;

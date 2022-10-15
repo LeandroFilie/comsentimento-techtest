@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import {
-  Container, ContainerNotice, Title,
+  Container, Title,
 } from './styles';
 
 import { Button } from '../../components/Button';
 
-import Notice from '../../components/Notice';
+import ListNotice from '../../components/ListNotice';
 
 export default function Adm() {
   return (
@@ -28,13 +28,7 @@ export default function Adm() {
           <Link to="/notice/new"><Button variant="ghost">Novo Edital</Button></Link>
         </Title>
 
-        <ContainerNotice>
-          <Notice name="Extração de relações temporais em textos clínicos" isOpened />
-
-          <Notice name="Extração de relações temporais em textos clínicos" isOpened />
-
-          <Notice name="Extração de relações temporais em textos clínicos" isOpened={false} />
-        </ContainerNotice>
+        <ListNotice />
       </Container>
     </>
 

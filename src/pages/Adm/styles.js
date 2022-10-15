@@ -13,8 +13,3 @@ export const Title = styled.div`
 
   margin-top: 5rem;
 `;
-
-export const ContainerNotice = styled.section`
-  padding: 2rem;
-  margin: 0 auto;
-`;

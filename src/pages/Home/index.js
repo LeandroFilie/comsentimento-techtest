@@ -2,17 +2,17 @@ import { Link } from 'react-router-dom';
 
 import { useState } from 'react';
 import Header from '../../components/Header';
-import Notice from '../../components/Notice';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 
 import {
-  TitleSection, Description, ListNotices, Container,
+  TitleSection, Description, Container, ContainerNotice,
 } from './styles';
 
 import Modal from '../../components/Modal';
 import Banner from '../../components/Banner';
 import plusIcon from '../../assets/plus.png';
+import ListNotice from '../../components/ListNotice';
 
 export default function Home() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -39,20 +39,15 @@ export default function Home() {
 
       <Banner />
 
-      <ListNotices id="notice">
+      <ContainerNotice id="notice">
         <TitleSection>
           <img src={plusIcon} alt="Icon" />
           <h2>Editais de Linhas de Pesquisa</h2>
         </TitleSection>
 
-        <Notice name="Extração de relações temporais em textos clínicos" isOpened onClick={handleVisibleModal} />
+        <ListNotice onClick={handleVisibleModal} />
 
-        <Notice name="Extração de relações temporais em textos clínicos" isOpened onClick={handleVisibleModal} />
-
-        <Notice name="Extração de relações temporais em textos clínicos" isOpened={false} onClick={handleVisibleModal} />
-
-        <Notice name="Extração de relações temporais em textos clínicos" isOpened onClick={handleVisibleModal} />
-      </ListNotices>
+      </ContainerNotice>
 
       <Description id="program">
         <TitleSection>

@@ -45,5 +45,9 @@ export default function Notice({ name, isOpened, onClick }) {
 Notice.propTypes = {
   name: PropTypes.string.isRequired,
   isOpened: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
+};
+
+Notice.defaultProps = {
+  onClick: undefined,
 };

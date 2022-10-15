@@ -1,17 +1,40 @@
 import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
+import NoticesServices from '../../services/NoticesServices';
 import Notice from '../Notice';
 import { Container } from './style';
 
 export default function ListNotice({ onClick }) {
+  const [notices, setNotices] = useState([]);
+
+  useEffect(() => {
+    async function loadNotices() {
+      try {
+        const noticesList = await NoticesServices.listNotices();
+
+        setNotices(noticesList.notices);
+      } catch (error) {
+        console.log('error', error);
+      }
+    }
+
+    loadNotices();
+  }, []);
+
   return (
     <Container>
-      <Notice name="Extração de relações temporais em textos clínicos" isOpened onClick={onClick} />
-
-      <Notice name="Extração de relações temporais em textos clínicos" isOpened onClick={onClick} />
-
-      <Notice name="Extração de relações temporais em textos clínicos" isOpened={false} onClick={onClick} />
-
-      <Notice name="Extração de relações temporais em textos clínicos" isOpened onClick={onClick} />
+      {notices.length > 0 && (
+        notices.map((notice) => (
+          <Notice
+            key={notice.noticeID}
+            name={notice.noticeTitle}
+            description={notice.noticeDescription}
+            date={notice.noticeOpeningDate}
+            isOpened={notice.noticeStatus === 'true'}
+            onClick={onClick}
+          />
+        ))
+      )}
     </Container>
   );
 }

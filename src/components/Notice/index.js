@@ -4,8 +4,10 @@ import { Container } from './style';
 import editIcon from '../../assets/edit.svg';
 import trashIcon from '../../assets/trash.svg';
 
-export default function Notice({ name, isOpened, onClick }) {
-  const authenticate = false;
+export default function Notice({
+  name, description, date, isOpened, onClick,
+}) {
+  const authenticate = true;
 
   if (!authenticate) {
     return (
@@ -23,11 +25,8 @@ export default function Notice({ name, isOpened, onClick }) {
     <Container isOpened={isOpened}>
       <div className="details">
         <h3>{name}</h3>
-        <p>
-          Lorem Ipsum has been the industry standard dummy text ever since
-          the 1500s, when an unknown printer took a galley of type and scrambled it
-        </p>
-        <p>12/12/2021</p>
+        <p>{description}</p>
+        <p>{date}</p>
         <p className="status">
           <span />
           {isOpened ? 'aberto' : 'fechado'}
@@ -44,6 +43,8 @@ export default function Notice({ name, isOpened, onClick }) {
 
 Notice.propTypes = {
   name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
   isOpened: PropTypes.bool.isRequired,
   onClick: PropTypes.func,
 };

@@ -2,6 +2,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
+  width: 100%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
+`;
+
+export const Menu = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between; 
@@ -14,7 +19,7 @@ export const Container = styled.header`
   }
 `;
 
-export const Menu = styled.ul`
+export const Nav = styled.ul`
   display: flex;
   align-items: center;
   gap: 1.5rem;

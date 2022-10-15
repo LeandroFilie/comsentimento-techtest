@@ -6,13 +6,15 @@ import Loader from '../Loader';
 import EmptyResponse from '../EmptyResponse';
 import { Container } from './style';
 
-export default function ListNotice({ onClick }) {
+export default function ListNotice({ onOpenModal }) {
   const [notices, setNotices] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function loadNotices() {
       try {
+        setLoading(true);
+
         const noticesList = await NoticesServices.listNotices();
 
         setNotices(noticesList.notices);
@@ -45,7 +47,7 @@ export default function ListNotice({ onClick }) {
             description={notice.noticeDescription}
             date={notice.noticeOpeningDate}
             isOpened={notice.noticeStatus === 'true'}
-            onClick={onClick}
+            onOpenModal={() => onOpenModal(notice)}
           />
         ))
       ) : (
@@ -56,9 +58,9 @@ export default function ListNotice({ onClick }) {
 }
 
 ListNotice.propTypes = {
-  onClick: PropTypes.func,
+  onOpenModal: PropTypes.func,
 };
 
 ListNotice.defaultProps = {
-  onClick: undefined,
+  onOpenModal: undefined,
 };

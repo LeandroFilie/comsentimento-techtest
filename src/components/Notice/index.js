@@ -5,13 +5,13 @@ import editIcon from '../../assets/edit.svg';
 import trashIcon from '../../assets/trash.svg';
 
 export default function Notice({
-  name, description, date, isOpened, onClick,
+  name, description, date, isOpened, onOpenModal,
 }) {
-  const authenticate = true;
+  const authenticate = false;
 
   if (!authenticate) {
     return (
-      <Container isOpened={isOpened} onClick={onClick}>
+      <Container isOpened={isOpened} onClick={onOpenModal}>
         <h3>{name}</h3>
         <p className="status">
           <span />
@@ -46,9 +46,9 @@ Notice.propTypes = {
   description: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   isOpened: PropTypes.bool.isRequired,
-  onClick: PropTypes.func,
+  onOpenModal: PropTypes.func,
 };
 
 Notice.defaultProps = {
-  onClick: undefined,
+  onOpenModal: undefined,
 };

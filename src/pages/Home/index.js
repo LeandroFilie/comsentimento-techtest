@@ -16,14 +16,16 @@ import ListNotice from '../../components/ListNotice';
 
 export default function Home() {
   const [modalVisible, setModalVisible] = useState(false);
+  const [noticeBeingDetailed, setNoticeBeingDetailed] = useState(null);
 
-  function handleVisibleModal() {
+  function handleVisibleModal(notice) {
     setModalVisible((prevSate) => !prevSate);
+    setNoticeBeingDetailed(notice);
   }
 
   return (
     <Container>
-      <Modal visible={modalVisible} setVisible={handleVisibleModal} />
+      <Modal visible={modalVisible} setVisible={handleVisibleModal} notice={noticeBeingDetailed} />
 
       <Header>
         <a href="#notice">
@@ -45,7 +47,7 @@ export default function Home() {
           <h2>Editais de Linhas de Pesquisa</h2>
         </TitleSection>
 
-        <ListNotice onClick={handleVisibleModal} />
+        <ListNotice onOpenModal={handleVisibleModal} />
 
       </ContainerNotice>
 

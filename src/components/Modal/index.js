@@ -10,7 +10,7 @@ import logo from '../../assets/logo-color.png';
 import plusIcon from '../../assets/plus.png';
 import closeIcon from '../../assets/x.svg';
 
-export default function Modal({ visible, setVisible }) {
+export default function Modal({ visible, setVisible, notice }) {
   useEffect(() => {
     document.body.style.overflowY = visible ? 'hidden' : 'auto';
   }, [visible]);
@@ -29,23 +29,25 @@ export default function Modal({ visible, setVisible }) {
         <Content>
           <h3>
             <img src={plusIcon} alt="item" />
-            Título: Extração de relações temporais em textos clínicos
+            Título:
+            {' '}
+            {notice.noticeTitle}
           </h3>
           <p>
             <img src={plusIcon} alt="item" />
-            Descrição: Lorem Ipsum has been the industry standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it. Lorem Ipsum has been the industry standard dummy
-            text ever since the 1500s, when an unknown printer took a galley of
-            type and scrambled it
+            {notice.noticeDescription}
           </p>
           <p>
             <img src={plusIcon} alt="item" />
-            Data de Abertura: 12/12/2021
+            Data de Abertura:
+            {' '}
+            {notice.noticeOpeningDate}
           </p>
           <p>
             <img src={plusIcon} alt="item" />
-            Status: aberto
+            Status:
+            {' '}
+            {notice.noticeStatus}
           </p>
         </Content>
         <Footer>
@@ -60,4 +62,14 @@ export default function Modal({ visible, setVisible }) {
 Modal.propTypes = {
   visible: PropTypes.bool.isRequired,
   setVisible: PropTypes.func.isRequired,
+  notice: PropTypes.shape({
+    noticeTitle: PropTypes.string,
+    noticeDescription: PropTypes.string,
+    noticeOpeningDate: PropTypes.string,
+    noticeStatus: PropTypes.string,
+  }),
+};
+
+Modal.defaultProps = {
+  notice: null,
 };

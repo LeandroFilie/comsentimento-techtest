@@ -17,6 +17,11 @@ export const Header = styled.header`
   flex-direction: column;
   align-items: center;
 
+  img{
+    height: 155px;
+    object-fit: cover;
+  }
+
   h1 {
     font-size: 2rem;  
     color: ${({ theme }) => theme.colors.gray[50]};

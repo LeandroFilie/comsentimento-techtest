@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Container } from './style';
 
-import EditIcon from '../../assets/edit.svg';
-import TrashIcon from '../../assets/trash.svg';
+import editIcon from '../../assets/edit.svg';
+import trashIcon from '../../assets/trash.svg';
 
 export default function Notice({ name, isOpened, onClick }) {
   const authenticate = false;
@@ -34,8 +34,8 @@ export default function Notice({ name, isOpened, onClick }) {
         </p>
       </div>
       <div className="actions">
-        <img src={EditIcon} alt="Editar" />
-        <img src={TrashIcon} alt="Excluir" />
+        <img src={editIcon} alt="Editar" />
+        <img src={trashIcon} alt="Excluir" />
       </div>
 
     </Container>

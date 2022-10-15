@@ -11,7 +11,7 @@ import {
 } from './styles';
 
 import Modal from '../../components/Modal';
-import PlusIcon from '../../assets/plus.png';
+import plusIcon from '../../assets/plus.png';
 
 export default function Home() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -44,7 +44,7 @@ export default function Home() {
 
       <ListNotices id="notice">
         <TitleSection>
-          <img src={PlusIcon} alt="Icon" />
+          <img src={plusIcon} alt="Icon" />
           <h2>Editais de Linhas de Pesquisa</h2>
         </TitleSection>
 
@@ -59,26 +59,26 @@ export default function Home() {
 
       <Description id="program">
         <TitleSection>
-          <img src={PlusIcon} alt="Icon" />
+          <img src={plusIcon} alt="Icon" />
           <h2>O Programa</h2>
         </TitleSection>
 
         <div className="content">
           <div className="objective">
             <p>
-              <img src={PlusIcon} alt="Item" />
+              <img src={plusIcon} alt="Item" />
               Aproximar a organização do ambiente de pesquisa acadêmico
             </p>
             <p>
-              <img src={PlusIcon} alt="Item" />
+              <img src={plusIcon} alt="Item" />
               Aumentar a contratação e retenção de talentos de IA em saúde
             </p>
             <p>
-              <img src={PlusIcon} alt="Item" />
+              <img src={plusIcon} alt="Item" />
               Demonstrar autoridade no tema através de publicações científicas
             </p>
             <p>
-              <img src={PlusIcon} alt="Item" />
+              <img src={plusIcon} alt="Item" />
               Desenvolver tecnologias que possam ser acopladas ao pipeline atual
               de produtos ou que possibilitem novos caminhos de geração de valor
             </p>
@@ -86,22 +86,22 @@ export default function Home() {
 
           <div className="requirements">
             <p>
-              <img src={PlusIcon} alt="Item" />
+              <img src={plusIcon} alt="Item" />
               Estudantes de Iniciação Científica, Mestrado, Doutorado ou Pós-doutorado
             </p>
 
             <p>
-              <img src={PlusIcon} alt="Item" />
+              <img src={plusIcon} alt="Item" />
               Interesse nos temas apresentados
             </p>
 
             <p>
-              <img src={PlusIcon} alt="Item" />
+              <img src={plusIcon} alt="Item" />
               Recebimento de bolsa
             </p>
 
             <p>
-              <img src={PlusIcon} alt="Item" />
+              <img src={plusIcon} alt="Item" />
               Se tornará parte da equipe de NLP da Comsentimento
             </p>
           </div>

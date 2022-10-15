@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import {
   Container, ContainerNotice, Title,
@@ -20,7 +21,7 @@ export default function Adm() {
       <Container>
         <Title>
           <h2>Editais Cadastrados</h2>
-          <Button variant="ghost">Novo Edital</Button>
+          <Link to="/notice/new"><Button variant="ghost">Novo Edital</Button></Link>
         </Title>
 
         <ContainerNotice>

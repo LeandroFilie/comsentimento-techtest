@@ -1,9 +1,14 @@
 import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 import { Container } from './style';
 
 import close from '../../assets/x.svg';
 
 export default function MenuMobile({ visible, setVisible, items }) {
+  useEffect(() => {
+    document.body.style.overflowY = visible ? 'hidden' : 'auto';
+  }, [visible]);
+
   return (
     <Container isVisible={visible}>
       <button type="button" onClick={() => setVisible(false)}>

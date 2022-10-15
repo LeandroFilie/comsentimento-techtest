@@ -6,6 +6,9 @@ import NoticeForm from '../../components/NoticeForm';
 import PageHeader from '../../components/PageHeader';
 
 export default function NewNotice() {
+  function handleSubmit(formData) {
+    console.log(formData);
+  }
   return (
     <>
       <Header>
@@ -22,7 +25,10 @@ export default function NewNotice() {
       <Container>
         <PageHeader title="Novo Edital" />
 
-        <NoticeForm />
+        <NoticeForm
+          buttonLabel="Cadastrar"
+          onSubmit={handleSubmit}
+        />
       </Container>
     </>
   );

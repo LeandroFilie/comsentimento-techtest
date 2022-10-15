@@ -11,13 +11,13 @@ import plusIcon from '../../assets/plus.png';
 import closeIcon from '../../assets/x.svg';
 
 export default function Modal({ visible, setVisible }) {
-  if (!visible) {
-    return null;
-  }
-
   useEffect(() => {
     document.body.style.overflowY = visible ? 'hidden' : 'auto';
   }, [visible]);
+
+  if (!visible) {
+    return null;
+  }
 
   return ReactDOM.createPortal(
     <Overlay>

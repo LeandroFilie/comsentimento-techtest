@@ -7,10 +7,11 @@ import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 
 import {
-  Banner, TitleSection, Description, ListNotices, Container,
+  TitleSection, Description, ListNotices, Container,
 } from './styles';
 
 import Modal from '../../components/Modal';
+import Banner from '../../components/Banner';
 import plusIcon from '../../assets/plus.png';
 
 export default function Home() {
@@ -36,11 +37,7 @@ export default function Home() {
         <Link to="/login"><Button variant="ghost" type="button">Área Administrativa</Button></Link>
       </Header>
 
-      <Banner>
-        <div className="banner-text">
-          <h1>Programa de Desenvolvimento de Inteligência Artificial em Saúde</h1>
-        </div>
-      </Banner>
+      <Banner />
 
       <ListNotices id="notice">
         <TitleSection>

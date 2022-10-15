@@ -34,8 +34,8 @@ export default function NoticeForm({ buttonLabel, onSubmit }) {
       <Input type="date" ref={fielDate} />
 
       <Select ref={fielStatus}>
-        <option value="open">Aberto</option>
-        <option value="close">Fechado</option>
+        <option value="true">Aberto</option>
+        <option value="false">Fechado</option>
       </Select>
 
       <Button variant="default">{buttonLabel}</Button>

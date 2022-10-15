@@ -8,6 +8,10 @@ class NoticesService {
   async listNotices() {
     return this.httpClient.get('/notices');
   }
+
+  async createNotice(notice) {
+    return this.httpClient.post('/notices', notice);
+  }
 }
 
 export default new NoticesService();

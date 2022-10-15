@@ -56,6 +56,12 @@ export const Content = styled.div`
     font-size: 1.1rem;
     line-height: 1.5rem;
   }
+
+  img {
+    height: 15px;
+    object-fit: cover;
+    margin-right: 8px;
+  }
 `;
 
 export const Footer = styled.footer`

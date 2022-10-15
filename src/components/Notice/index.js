@@ -4,12 +4,12 @@ import { Container } from './style';
 import EditIcon from '../../assets/edit.svg';
 import TrashIcon from '../../assets/trash.svg';
 
-export default function Notice({ name, isOpened }) {
-  const authenticate = true;
+export default function Notice({ name, isOpened, onClick }) {
+  const authenticate = false;
 
   if (!authenticate) {
     return (
-      <Container isOpened={isOpened}>
+      <Container isOpened={isOpened} onClick={onClick}>
         <h3>{name}</h3>
         <p className="status">
           <span />

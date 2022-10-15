@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+import { useState } from 'react';
 import Header from '../../components/Header';
 import Notice from '../../components/Notice';
 import { Button } from '../../components/Button';
@@ -9,11 +10,20 @@ import {
   Banner, TitleSection, Description, ListNotices, Container,
 } from './styles';
 
+import Modal from '../../components/Modal';
 import PlusIcon from '../../assets/plus.png';
 
 export default function Home() {
+  const [modalVisible, setModalVisible] = useState(false);
+
+  function handleVisibleModal() {
+    setModalVisible((prevSate) => !prevSate);
+  }
+
   return (
     <Container>
+      <Modal visible={modalVisible} setVisible={handleVisibleModal} />
+
       <Header>
         <li>
           <a href="#notice">Editais</a>
@@ -38,13 +48,13 @@ export default function Home() {
           <h2>Editais de Linhas de Pesquisa</h2>
         </TitleSection>
 
-        <Notice name="Extração de relações temporais em textos clínicos" isOpened />
+        <Notice name="Extração de relações temporais em textos clínicos" isOpened onClick={handleVisibleModal} />
 
-        <Notice name="Extração de relações temporais em textos clínicos" isOpened />
+        <Notice name="Extração de relações temporais em textos clínicos" isOpened onClick={handleVisibleModal} />
 
-        <Notice name="Extração de relações temporais em textos clínicos" isOpened={false} />
+        <Notice name="Extração de relações temporais em textos clínicos" isOpened={false} onClick={handleVisibleModal} />
 
-        <Notice name="Extração de relações temporais em textos clínicos" isOpened />
+        <Notice name="Extração de relações temporais em textos clínicos" isOpened onClick={handleVisibleModal} />
       </ListNotices>
 
       <Description id="program">

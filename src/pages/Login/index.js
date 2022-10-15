@@ -2,7 +2,7 @@
 import { Container, Header, Form } from './styles';
 
 import logo from '../../assets/logo.png';
-import { Button } from '../../components/Button';
+import Button from '../../components/Button';
 import { Input } from '../../components/Input';
 
 export default function Login() {
@@ -24,7 +24,7 @@ export default function Login() {
           <Input variant="login" type="password" placeholder="********" />
         </label>
 
-        <Button variant="default">Entrar</Button>
+        <Button variant="default" label="Entrar" />
       </Form>
     </Container>
   );

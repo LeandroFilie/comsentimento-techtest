@@ -4,7 +4,7 @@ import {
   Container, Title,
 } from './styles';
 
-import { Button } from '../../components/Button';
+import Button from '../../components/Button';
 
 import ListNotice from '../../components/ListNotice';
 
@@ -25,7 +25,7 @@ export default function Adm() {
       <Container>
         <Title>
           <h2>Editais Cadastrados</h2>
-          <Link to="/notice/new"><Button variant="ghost">Novo Edital</Button></Link>
+          <Link to="/notice/new"><Button variant="ghost" label="Novo Edital" /></Link>
         </Title>
 
         <ListNotice />

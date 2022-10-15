@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { useState } from 'react';
 import Header from '../../components/Header';
-import { Button } from '../../components/Button';
+import Button from '../../components/Button';
 import { Footer } from '../../components/Footer';
 
 import {
@@ -36,7 +36,7 @@ export default function Home() {
           O Programa
           <span />
         </a>
-        <Link to="/login"><Button variant="ghost" type="button">Área Administrativa</Button></Link>
+        <Link to="/login"><Button variant="ghost" label="Área Administrativa" /></Link>
       </Header>
 
       <Banner />

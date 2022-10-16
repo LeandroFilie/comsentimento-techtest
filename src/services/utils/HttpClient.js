@@ -23,6 +23,22 @@ class HttpClient {
 
     return response.json();
   }
+
+  // eslint-disable-next-line no-unused-vars
+  async put(path, body) {
+    const headers = new Headers();
+
+    headers.append('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE0NzQ4MzY0NywiaWF0IjoxNjY1OTMxNDUxLCJleHAiOjE2NjYwMTc4NTF9.jyu8fCzxTS-b5R4EXyLKp8An_DwlSMEEbiUEllyBiZI');
+    headers.append('Content-Type', 'application/json');
+
+    const response = await fetch(`${this.baseUrl}${path}`, {
+      method: 'PUT',
+      body: JSON.stringify(body),
+      headers,
+    });
+
+    return response;
+  }
 }
 
 export default HttpClient;

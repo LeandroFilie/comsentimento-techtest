@@ -16,6 +16,10 @@ class NoticesService {
   createNotice(notice) {
     return this.httpClient.post('/notices', notice);
   }
+
+  updateNotice(id, notice) {
+    return this.httpClient.put(`/notices/${id}`, notice);
+  }
 }
 
 export default new NoticesService();

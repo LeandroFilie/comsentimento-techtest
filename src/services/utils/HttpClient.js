@@ -4,53 +4,59 @@ class HttpClient {
   }
 
   async get(path) {
-    const response = await fetch(`${this.baseUrl}${path}`);
-
-    return response.json();
+    return this.makeRequest(path, {
+      method: 'GET',
+    });
   }
 
   async post(path, body) {
-    const headers = new Headers();
-
-    headers.append('Authorization', process.env.REACT_APP_AUTHORIZATION_HEADER);
-    headers.append('Content-Type', 'application/json');
-
-    const response = await fetch(`${this.baseUrl}${path}`, {
-      method: 'post',
+    return this.makeRequest(path, {
+      method: 'POST',
       body: JSON.stringify(body),
-      headers,
     });
-
-    return response.json();
   }
 
   async put(path, body) {
-    const headers = new Headers();
-
-    headers.append('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE0NzQ4MzY0NywiaWF0IjoxNjY1OTMxNDUxLCJleHAiOjE2NjYwMTc4NTF9.jyu8fCzxTS-b5R4EXyLKp8An_DwlSMEEbiUEllyBiZI');
-    headers.append('Content-Type', 'application/json');
-
-    const response = await fetch(`${this.baseUrl}${path}`, {
+    return this.makeRequest(path, {
       method: 'PUT',
       body: JSON.stringify(body),
-      headers,
     });
-
-    return response;
   }
 
   async delete(path) {
+    return this.makeRequest(path, {
+      method: 'DELETE',
+    });
+  }
+
+  async makeRequest(path, { body = null, method }) {
     const headers = new Headers();
 
-    headers.append('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjE0NzQ4MzY0NywiaWF0IjoxNjY1OTMxNDUxLCJleHAiOjE2NjYwMTc4NTF9.jyu8fCzxTS-b5R4EXyLKp8An_DwlSMEEbiUEllyBiZI');
-    headers.append('Content-Type', 'application/json');
+    if (body) {
+      headers.append('Content-type', 'application/json');
+
+      if (method === 'DELETE' || method === 'PUT') headers.append('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzYsImlhdCI6MTY2NTk0NjM1MywiZXhwIjoxNjY2MDMyNzUzfQ.jC6mCVAYLAww0LdBcRRHSyzT5NY-BEqOKtzGS4qXYTI');
+      else headers.append('Authorization', process.env.REACT_APP_AUTHORIZATION_HEADER);
+    }
 
     const response = await fetch(`${this.baseUrl}${path}`, {
-      method: 'delete',
+      method,
+      body,
       headers,
     });
 
-    return response;
+    const contentType = response.headers.get('Content-Type');
+
+    let responseBody = null;
+    if (contentType?.includes('application/json')) {
+      responseBody = await response.json();
+    }
+
+    if (response.ok) {
+      return responseBody;
+    }
+
+    throw new Error();
   }
 }
 

@@ -5,11 +5,15 @@ class NoticesService {
     this.httpClient = new HttpClient('https://api.comsentimento.com.br');
   }
 
-  async listNotices() {
+  listNotices() {
     return this.httpClient.get('/notices');
   }
 
-  async createNotice(notice) {
+  getNoticeById(id) {
+    return this.httpClient.get(`/notices/${id}`);
+  }
+
+  createNotice(notice) {
     return this.httpClient.post('/notices', notice);
   }
 }

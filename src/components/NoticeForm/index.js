@@ -5,8 +5,9 @@ import { Input } from '../Input';
 import { Select } from '../Select';
 import { TextArea } from '../TextArea';
 import Button from '../Button';
+import convertDateToEnUs from '../../utils/convertDateToEnUs';
 
-export default function NoticeForm({ buttonLabel, onSubmit }) {
+export default function NoticeForm({ buttonLabel, onSubmit, noticeData }) {
   const fieldTitle = useRef(null);
   const fieldDescription = useRef(null);
   const fielDate = useRef(null);
@@ -25,15 +26,25 @@ export default function NoticeForm({ buttonLabel, onSubmit }) {
     });
   }
 
+  /*   console.log(new Date(noticeData.noticeOpeningDate).toLocaleString('en-US', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  })); */
+
   return (
     <Form onSubmit={handleSubmit}>
-      <Input placeholder="Título do Edital" ref={fieldTitle} />
+      <Input placeholder="Título do Edital" ref={fieldTitle} defaultValue={noticeData?.noticeTitle} />
 
-      <TextArea placeholder="Descrição" ref={fieldDescription} />
+      <TextArea placeholder="Descrição" ref={fieldDescription} defaultValue={noticeData?.noticeDescription} />
 
-      <Input type="date" ref={fielDate} />
+      <Input
+        type="date"
+        ref={fielDate}
+        defaultValue={convertDateToEnUs(noticeData.noticeOpeningDate)}
+      />
 
-      <Select ref={fielStatus}>
+      <Select ref={fielStatus} defaultValue={new Date(noticeData?.noticeStatus)}>
         <option value="true">Aberto</option>
         <option value="false">Fechado</option>
       </Select>
@@ -47,4 +58,15 @@ export default function NoticeForm({ buttonLabel, onSubmit }) {
 NoticeForm.propTypes = {
   buttonLabel: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
+  noticeData: PropTypes.shape({
+    noticeID: PropTypes.number.isRequired,
+    noticeTitle: PropTypes.string.isRequired,
+    noticeDescription: PropTypes.string.isRequired,
+    noticeOpeningDate: PropTypes.string.isRequired,
+    noticeStatus: PropTypes.string.isRequired,
+  }),
+};
+
+NoticeForm.defaultProps = {
+  noticeData: null,
 };

@@ -1,11 +1,30 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import NoticesServices from '../../services/NoticesServices';
+
 import Header from '../../components/Header';
+import PageHeader from '../../components/PageHeader';
+import NoticeForm from '../../components/NoticeForm';
+
+import Loader from '../../components/Loader';
+
 import { Container } from './style';
 
-import NoticeForm from '../../components/NoticeForm';
-import PageHeader from '../../components/PageHeader';
-
 export default function EditNotice() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [noticeFound, setNoticeFound] = useState({});
+  const { id } = useParams();
+
+  useEffect(() => {
+    async function loadNotice() {
+      const noticeData = await NoticesServices.getNoticeById(id);
+      setNoticeFound(noticeData);
+      setIsLoading(false);
+    }
+
+    loadNotice();
+  }, [id]);
+
   function handleSubmit() {
 
   }
@@ -25,10 +44,16 @@ export default function EditNotice() {
       <Container>
         <PageHeader title="Editar Edital" />
 
-        <NoticeForm
-          buttonLabel="Editar"
-          onSubmit={handleSubmit}
-        />
+        { isLoading ? (
+          <Loader />
+        ) : (
+          <NoticeForm
+            buttonLabel="Salvar Alterações"
+            onSubmit={handleSubmit}
+            noticeData={noticeFound}
+          />
+        )}
+
       </Container>
     </>
   );

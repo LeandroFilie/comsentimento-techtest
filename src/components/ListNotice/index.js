@@ -43,6 +43,7 @@ export default function ListNotice({ onOpenModal }) {
         notices.map((notice) => (
           <Notice
             key={notice.noticeID}
+            id={notice.noticeID}
             name={notice.noticeTitle}
             description={notice.noticeDescription}
             date={notice.noticeOpeningDate}

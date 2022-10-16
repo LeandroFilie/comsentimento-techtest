@@ -4,7 +4,7 @@ import { Form } from './style';
 import { Input } from '../Input';
 import { Select } from '../Select';
 import { TextArea } from '../TextArea';
-import { Button } from '../Button';
+import Button from '../Button';
 
 export default function NoticeForm({ buttonLabel, onSubmit }) {
   const fieldTitle = useRef(null);
@@ -38,7 +38,7 @@ export default function NoticeForm({ buttonLabel, onSubmit }) {
         <option value="false">Fechado</option>
       </Select>
 
-      <Button variant="default">{buttonLabel}</Button>
+      <Button variant="default" label={buttonLabel} />
     </Form>
 
   );

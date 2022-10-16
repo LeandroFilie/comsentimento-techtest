@@ -1,15 +1,10 @@
 import PropTypes from 'prop-types';
 import { Container } from './style.js';
-import Loader from '../Loader';
 
-export default function Button({ variant, label, loading }) {
+export default function Button({ variant, label }) {
   return (
     <Container variant={variant}>
-      {loading ? (
-        <Loader />
-      ) : (
-        label
-      )}
+      {label}
     </Container>
   );
 }
@@ -17,10 +12,8 @@ export default function Button({ variant, label, loading }) {
 Button.propTypes = {
   variant: PropTypes.string,
   label: PropTypes.string.isRequired,
-  loading: PropTypes.bool,
 };
 
 Button.defaultProps = {
   variant: 'default',
-  loading: false,
 };

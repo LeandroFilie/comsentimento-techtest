@@ -11,8 +11,8 @@ export default function Router() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/adm" element={<Adm />} />
-      <Route path="/notice/new" element={<NewNotice />} />
-      <Route path="/notice/edit" element={<EditNotice />} />
+      <Route path="/notice" element={<NewNotice />} />
+      <Route path="/notice/:id" element={<EditNotice />} />
     </Routes>
   );
 }

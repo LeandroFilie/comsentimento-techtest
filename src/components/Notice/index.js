@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { Container } from './style';
 
 import editIcon from '../../assets/edit.svg';
 import trashIcon from '../../assets/trash.svg';
 
 export default function Notice({
-  name, description, date, isOpened, onOpenModal,
+  id, name, description, date, isOpened, onOpenModal,
 }) {
-  const authenticate = false;
+  const authenticate = true;
 
   if (!authenticate) {
     return (
@@ -33,7 +34,7 @@ export default function Notice({
         </p>
       </div>
       <div className="actions">
-        <img src={editIcon} alt="Editar" />
+        <Link to={`/notice/${id}`}><img src={editIcon} alt="Editar" /></Link>
         <img src={trashIcon} alt="Excluir" />
       </div>
 
@@ -42,6 +43,7 @@ export default function Notice({
 }
 
 Notice.propTypes = {
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,

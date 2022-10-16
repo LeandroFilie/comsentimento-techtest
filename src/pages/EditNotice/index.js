@@ -6,6 +6,9 @@ import NoticeForm from '../../components/NoticeForm';
 import PageHeader from '../../components/PageHeader';
 
 export default function EditNotice() {
+  function handleSubmit() {
+
+  }
   return (
     <>
       <Header>
@@ -22,7 +25,10 @@ export default function EditNotice() {
       <Container>
         <PageHeader title="Editar Edital" />
 
-        <NoticeForm />
+        <NoticeForm
+          buttonLabel="Editar"
+          onSubmit={handleSubmit}
+        />
       </Container>
     </>
   );

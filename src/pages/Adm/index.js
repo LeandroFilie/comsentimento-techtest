@@ -25,7 +25,7 @@ export default function Adm() {
       <Container>
         <Title>
           <h2>Editais Cadastrados</h2>
-          <Link to="/notice/new"><Button variant="ghost" label="Novo Edital" /></Link>
+          <Link to="/notice"><Button variant="ghost" label="Novo Edital" /></Link>
         </Title>
 
         <ListNotice />

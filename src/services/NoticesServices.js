@@ -20,6 +20,10 @@ class NoticesService {
   updateNotice(id, notice) {
     return this.httpClient.put(`/notices/${id}`, notice);
   }
+
+  deleteNotice(id) {
+    return this.httpClient.delete(`/notices/${id}`);
+  }
 }
 
 export default new NoticesService();

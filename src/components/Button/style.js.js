@@ -18,6 +18,16 @@ const containerVariant = {
       transition: all 0.2s;
     }
   `,
+  cancel: css`
+    color: ${({ theme }) => theme.colors.gray[400]};
+    background: transparent;
+    transition: all 0.2s;
+  `,
+  danger: css`
+    color: ${({ theme }) => theme.colors.gray[50]};
+    background: ${({ theme }) => theme.colors.danger};
+    transition: all 0.2s;
+  `,
 };
 
 export const Container = styled.button`

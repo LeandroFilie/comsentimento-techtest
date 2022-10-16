@@ -18,14 +18,26 @@ export default function Home() {
   const [modalVisible, setModalVisible] = useState(false);
   const [noticeBeingDetailed, setNoticeBeingDetailed] = useState(null);
 
-  function handleVisibleModal(notice) {
-    setModalVisible((prevSate) => !prevSate);
+  function handleOpenModal(notice) {
+    setModalVisible(true);
     setNoticeBeingDetailed(notice);
+  }
+
+  function handleCloseModal() {
+    console.log('close modal');
+    setNoticeBeingDetailed(null);
+    setModalVisible(false);
   }
 
   return (
     <Container>
-      <Modal visible={modalVisible} setVisible={handleVisibleModal} notice={noticeBeingDetailed} />
+      <Modal
+        visible={modalVisible}
+        onClose={handleCloseModal}
+        notice={noticeBeingDetailed}
+        mode="detail"
+        title="Detalhes do Edital"
+      />
 
       <Header>
         <a href="#notice">
@@ -47,7 +59,7 @@ export default function Home() {
           <h2>Editais de Linhas de Pesquisa</h2>
         </TitleSection>
 
-        <ListNotice onOpenModal={handleVisibleModal} />
+        <ListNotice onOpenModal={handleOpenModal} />
 
       </ContainerNotice>
 

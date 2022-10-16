@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { Container } from './style.js';
 
-export default function Button({ variant, label }) {
+export default function Button({ variant, label, onClick }) {
   return (
-    <Container variant={variant}>
+    <Container variant={variant} onClick={onClick}>
       {label}
     </Container>
   );
@@ -12,8 +12,10 @@ export default function Button({ variant, label }) {
 Button.propTypes = {
   variant: PropTypes.string,
   label: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
   variant: 'default',
+  onClick: undefined,
 };

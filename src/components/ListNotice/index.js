@@ -42,7 +42,7 @@ export default function ListNotice({ onOpenModal }) {
       {notices.length > 0 ? (
         notices.map((notice) => (
           <Notice
-            key={notice.noticeID}
+            key={Math.random()}
             id={notice.noticeID}
             name={notice.noticeTitle}
             description={notice.noticeDescription}

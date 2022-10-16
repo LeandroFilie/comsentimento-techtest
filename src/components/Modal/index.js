@@ -27,11 +27,9 @@ export default function Modal({
     try {
       await NoticesServices.deleteNotice(id);
 
-      console.log('excluir');
+      location.reload();
 
       onClose();
-
-      console.log('depois on close');
     } catch (error) {
       console.log(error);
     }

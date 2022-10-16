@@ -22,5 +22,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/jsx-no-bind': 'off',
     'class-methods-use-this': 'off',
+    'no-restricted-globals': 'off',
   },
 };

@@ -8,13 +8,11 @@ import { Container } from './style';
 
 export default function ListNotice({ onOpenModal }) {
   const [notices, setNotices] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadNotices() {
       try {
-        setLoading(true);
-
         const noticesList = await NoticesServices.listNotices();
 
         setNotices(noticesList.notices);

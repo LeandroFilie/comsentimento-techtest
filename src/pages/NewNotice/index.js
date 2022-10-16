@@ -4,7 +4,7 @@ import { Container } from './style';
 
 import NoticeForm from '../../components/NoticeForm';
 import PageHeader from '../../components/PageHeader';
-// import NoticesServices from '../../services/NoticesServices';
+import NoticesServices from '../../services/NoticesServices';
 
 export default function NewNotice() {
   async function handleSubmit(formData) {
@@ -17,11 +17,9 @@ export default function NewNotice() {
         noticeStatus: formData.status,
       };
 
-      console.log(notice);
+      const response = await NoticesServices.createNotice(notice);
 
-      // const response = await NoticesServices.createNotice(notice);
-
-      // console.log(response);
+      console.log(response);
     } catch {
       console.log('Ocorreu um erro ao cadastrar o edital');
     }

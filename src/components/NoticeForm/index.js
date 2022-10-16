@@ -26,12 +26,6 @@ export default function NoticeForm({ buttonLabel, onSubmit, noticeData }) {
     });
   }
 
-  /*   console.log(new Date(noticeData.noticeOpeningDate).toLocaleString('en-US', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-  })); */
-
   return (
     <Form onSubmit={handleSubmit}>
       <Input placeholder="Título do Edital" ref={fieldTitle} defaultValue={noticeData?.noticeTitle} />
@@ -41,10 +35,10 @@ export default function NoticeForm({ buttonLabel, onSubmit, noticeData }) {
       <Input
         type="date"
         ref={fielDate}
-        defaultValue={convertDateToEnUs(noticeData.noticeOpeningDate)}
+        defaultValue={convertDateToEnUs(noticeData?.noticeOpeningDate)}
       />
 
-      <Select ref={fielStatus} defaultValue={new Date(noticeData?.noticeStatus)}>
+      <Select ref={fielStatus} defaultValue={noticeData?.noticeStatus}>
         <option value="true">Aberto</option>
         <option value="false">Fechado</option>
       </Select>

@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 export function ReactPortal({ containerId, children }) {
   let container = document.getElementById(containerId);

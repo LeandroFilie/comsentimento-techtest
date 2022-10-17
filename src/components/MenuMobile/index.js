@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
 import { useEffect } from 'react';
+import PropTypes from 'prop-types';
+
 import { Container } from './style';
 
 import close from '../../assets/x.svg';

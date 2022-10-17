@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
-import { Container } from './style';
 
 import Loader from '../Loader';
+
+import { Container } from './style';
 
 export default function Button({
   variant, label, onClick, disabled, isLoading,

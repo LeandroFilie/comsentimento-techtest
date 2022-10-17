@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom';
-import Header from '../../components/Header';
-import { Container } from './style';
 
+import NoticesServices from '../../services/NoticesServices';
+
+import Header from '../../components/Header';
 import NoticeForm from '../../components/NoticeForm';
 import PageHeader from '../../components/PageHeader';
-import NoticesServices from '../../services/NoticesServices';
+
 import useAuth from '../../hooks/useAuth';
 import toast from '../../utils/toast';
+
+import { Container } from './style';
 
 export default function NewNotice() {
   const { handleLogout } = useAuth();

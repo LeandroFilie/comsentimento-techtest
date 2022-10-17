@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+import useAuth from '../../hooks/useAuth';
+
 import { Container } from './style';
 
 import editIcon from '../../assets/edit.svg';
 import trashIcon from '../../assets/trash.svg';
-import useAuth from '../../hooks/useAuth';
 
 export default function Notice({ notice, onOpenModal, notDetailed }) {
   const { authenticated } = useAuth();

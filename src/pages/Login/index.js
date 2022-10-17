@@ -1,14 +1,14 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container, Header, Form } from './styles';
 
-import logo from '../../assets/logo.png';
 import Button from '../../components/Button';
 import { Input } from '../../components/Input';
 
 import useAuth from '../../hooks/useAuth';
+
+import { Container, Header, Form } from './styles';
+
+import logo from '../../assets/logo.png';
 
 export default function Login() {
   const { handleLogin } = useAuth();

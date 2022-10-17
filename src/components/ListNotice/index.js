@@ -1,9 +1,12 @@
-import PropTypes from 'prop-types';
 import { useCallback, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+
 import NoticesServices from '../../services/NoticesServices';
+
 import Notice from '../Notice';
 import Loader from '../Loader';
 import EmptyResponse from '../EmptyResponse';
+
 import { Container } from './style';
 
 export default function ListNotice({ onOpenModal, noticeIdBeingDeleted, notDetailed }) {

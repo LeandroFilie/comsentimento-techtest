@@ -24,5 +24,7 @@ module.exports = {
     'class-methods-use-this': 'off',
     'react/jsx-no-constructed-context-values': 'off',
     'label-has-associated-control': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
+    'eslint-disable no-useless-return': 'off',
   },
 };

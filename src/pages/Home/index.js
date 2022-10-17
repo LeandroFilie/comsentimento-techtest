@@ -1,18 +1,17 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { useState } from 'react';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
+import Modal from '../../components/Modal';
+import Banner from '../../components/Banner';
+import plusIcon from '../../assets/plus.png';
+import ListNotice from '../../components/ListNotice';
 import { Footer } from '../../components/Footer';
 
 import {
   TitleSection, Description, Container, ContainerNotice,
 } from './styles';
-
-import Modal from '../../components/Modal';
-import Banner from '../../components/Banner';
-import plusIcon from '../../assets/plus.png';
-import ListNotice from '../../components/ListNotice';
 
 export default function Home() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -24,7 +23,6 @@ export default function Home() {
   }
 
   function handleCloseModal() {
-    console.log('close modal');
     setNoticeBeingDetailed(null);
     setModalVisible(false);
   }

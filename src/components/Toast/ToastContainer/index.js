@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
-import { toastEventManager } from '../../../utils/toast';
+
 import ToastMessage from '../ToastMessage';
+
+import { toastEventManager } from '../../../utils/toast';
+
 import { Container } from './styles';
 
 export default function ToastContainer() {

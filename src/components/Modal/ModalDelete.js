@@ -1,10 +1,11 @@
-/* eslint-disable no-unused-vars */
-import PropTypes from 'prop-types';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import NoticesServices from '../../services/NoticesServices';
-import toast from '../../utils/toast';
+
 import Button from '../Button';
+import toast from '../../utils/toast';
+
 import { Content, Footer } from './style';
 
 export default function ModalDelete({ onClose, noticeID }) {

@@ -1,7 +1,9 @@
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import arrow from '../../assets/arrow.svg';
+import PropTypes from 'prop-types';
+
 import { Title } from './style';
+
+import arrow from '../../assets/arrow.svg';
 
 export default function PageHeader({ title }) {
   return (

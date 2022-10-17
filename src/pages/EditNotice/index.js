@@ -1,17 +1,19 @@
-import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+
 import NoticesServices from '../../services/NoticesServices';
 
 import Header from '../../components/Header';
 import PageHeader from '../../components/PageHeader';
 import NoticeForm from '../../components/NoticeForm';
-
 import Loader from '../../components/Loader';
 
-import { Container } from './style';
-import convertDateToEnUs from '../../utils/convertDateToEnUs';
 import useAuth from '../../hooks/useAuth';
+
 import toast from '../../utils/toast';
+import convertDateToEnUs from '../../utils/convertDateToEnUs';
+
+import { Container } from './style';
 
 export default function EditNotice() {
   const { handleLogout } = useAuth();
@@ -57,7 +59,7 @@ export default function EditNotice() {
         type: 'success',
         text: 'Alterações salvas com sucesso',
       });
-    } catch (error) {
+    } catch {
       toast({
         type: 'danger',
         text: 'Ocorreu um erro ao salvar as alterações',

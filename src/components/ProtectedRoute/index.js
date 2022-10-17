@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { Navigate } from 'react-router-dom';
 import PropType from 'prop-types';
 

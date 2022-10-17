@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-return */
 export default class EventManager {
   constructor() {
     this.listeners = new Map();

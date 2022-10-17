@@ -9,7 +9,7 @@ import convertDateToEnUs from '../../utils/convertDateToEnUs';
 
 export default function NoticeForm({ buttonLabel, onSubmit, noticeData }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isFormValid, setIsFormValid] = useState(!!noticeData);
+  const [isFormValid, setIsFormValid] = useState(noticeData !== null);
 
   const fieldTitle = useRef(null);
   const fieldDescription = useRef(null);
@@ -23,7 +23,7 @@ export default function NoticeForm({ buttonLabel, onSubmit, noticeData }) {
       && fielStatus.current?.value);
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
     setIsSubmitting(true);
@@ -33,7 +33,7 @@ export default function NoticeForm({ buttonLabel, onSubmit, noticeData }) {
     const date = fielDate.current.value;
     const status = fielStatus.current.value;
 
-    onSubmit({
+    await onSubmit({
       title, description, date, status,
     });
 
@@ -42,9 +42,10 @@ export default function NoticeForm({ buttonLabel, onSubmit, noticeData }) {
       fieldDescription.current.value = '';
       fielDate.current.value = '';
       fielStatus.current.value = '';
+      setIsFormValid(false);
     }
 
-    setIsSubmitting(true);
+    setIsSubmitting(false);
   }
 
   return (

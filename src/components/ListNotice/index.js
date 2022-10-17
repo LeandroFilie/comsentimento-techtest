@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import NoticesServices from '../../services/NoticesServices';
 import Notice from '../Notice';
 import Loader from '../Loader';
@@ -10,22 +10,22 @@ export default function ListNotice({ onOpenModal, noticeIdBeingDeleted, notDetai
   const [notices, setNotices] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    async function loadNotices() {
-      try {
-        const noticesList = await NoticesServices.listNotices();
+  const loadNotices = useCallback(async () => {
+    try {
+      const noticesList = await NoticesServices.listNotices();
 
-        setNotices(noticesList.notices);
-        setLoading(false);
-      } catch (error) {
-        setNotices({});
-      } finally {
-        setLoading(false);
-      }
+      setNotices(noticesList.notices);
+      setLoading(false);
+    } catch (error) {
+      setNotices({});
+    } finally {
+      setLoading(false);
     }
-
-    loadNotices();
   }, [noticeIdBeingDeleted]);
+
+  useEffect(() => {
+    loadNotices();
+  }, [loadNotices]);
 
   if (loading) {
     return (
@@ -41,11 +41,7 @@ export default function ListNotice({ onOpenModal, noticeIdBeingDeleted, notDetai
         notices.map((notice) => (
           <Notice
             key={Math.random()}
-            id={notice.noticeID}
-            name={notice.noticeTitle}
-            description={notice.noticeDescription}
-            date={notice.noticeOpeningDate}
-            isOpened={notice.noticeStatus === 'true'}
+            notice={notice}
             onOpenModal={() => onOpenModal(notice)}
             notDetailed={notDetailed}
           />

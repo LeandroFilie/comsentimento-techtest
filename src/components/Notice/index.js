@@ -6,36 +6,34 @@ import editIcon from '../../assets/edit.svg';
 import trashIcon from '../../assets/trash.svg';
 import useAuth from '../../hooks/useAuth';
 
-export default function Notice({
-  id, name, description, date, isOpened, onOpenModal, notDetailed,
-}) {
+export default function Notice({ notice, onOpenModal, notDetailed }) {
   const { authenticated } = useAuth();
 
   if (notDetailed) {
     return (
-      <Container isOpened={isOpened} onClick={onOpenModal} authenticated={authenticated}>
-        <h3>{name}</h3>
+      <Container isOpened={notice.noticeStatus === 'true'} onClick={onOpenModal} authenticated={authenticated}>
+        <h3>{notice.noticeTitle}</h3>
         <p className="status">
           <span />
-          {isOpened ? 'aberto' : 'fechado'}
+          {notice.noticeStatus === 'true' ? 'aberto' : 'fechado'}
         </p>
       </Container>
     );
   }
 
   return (
-    <Container isOpened={isOpened} authenticated={authenticated}>
+    <Container isOpened={notice.noticeStatus === 'true'} authenticated={authenticated}>
       <div className="details">
-        <h3>{name}</h3>
-        <p>{description}</p>
-        <p>{date}</p>
+        <h3>{notice.noticeTitle}</h3>
+        <p>{notice.noticeDescription}</p>
+        <p>{notice.noticeOpeningDate}</p>
         <p className="status">
           <span />
-          {isOpened ? 'aberto' : 'fechado'}
+          {notice.noticeStatus === 'true' ? 'aberto' : 'fechado'}
         </p>
       </div>
       <div className="actions">
-        <Link to={`/notice/${id}`}><img src={editIcon} alt="Editar" /></Link>
+        <Link to={`/notice/${notice.noticeID}`}><img src={editIcon} alt="Editar" /></Link>
         <span><img src={trashIcon} alt="Excluir" onClick={onOpenModal} aria-hidden="true" /></span>
       </div>
 
@@ -44,11 +42,13 @@ export default function Notice({
 }
 
 Notice.propTypes = {
-  id: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  isOpened: PropTypes.bool.isRequired,
+  notice: PropTypes.shape({
+    noticeID: PropTypes.number.isRequired,
+    noticeTitle: PropTypes.string.isRequired,
+    noticeDescription: PropTypes.string.isRequired,
+    noticeOpeningDate: PropTypes.string.isRequired,
+    noticeStatus: PropTypes.string.isRequired,
+  }).isRequired,
   onOpenModal: PropTypes.func,
   notDetailed: PropTypes.bool,
 };

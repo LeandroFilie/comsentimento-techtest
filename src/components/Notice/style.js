@@ -11,7 +11,7 @@ export const Container = styled.article`
   margin: 0 auto;
   max-width: 1200px;
 
-  cursor: pointer;
+  cursor: ${({ authenticate }) => (authenticate ? 'default' : 'pointer')};
 
   h3{
     font-weight: 500;

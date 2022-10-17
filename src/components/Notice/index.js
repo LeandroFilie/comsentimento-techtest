@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Container } from './style';
 
 import editIcon from '../../assets/edit.svg';
@@ -8,7 +8,7 @@ import trashIcon from '../../assets/trash.svg';
 export default function Notice({
   id, name, description, date, isOpened, onOpenModal,
 }) {
-  const authenticate = true;
+  const authenticate = false;
 
   if (!authenticate) {
     return (

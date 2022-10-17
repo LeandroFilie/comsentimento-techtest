@@ -6,14 +6,14 @@ import NoticesServices from '../../services/NoticesServices';
 import Button from '../Button';
 import { Content, Footer } from './style';
 
+// eslint-disable-next-line react/prop-types
 export default function ModalDelete({ onClose, noticeID }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+
   async function handleConfirmDeleteNotice(id) {
     try {
       setIsSubmitting(true);
       await NoticesServices.deleteNotice(id);
-
-      location.reload();
 
       onClose();
     } catch (error) {

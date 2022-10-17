@@ -50,7 +50,10 @@ export default function Adm() {
           <Link to="/notice"><Button variant="ghost" label="Novo Edital" /></Link>
         </Title>
 
-        <ListNotice onOpenModal={handleOpenModal} />
+        <ListNotice
+          onOpenModal={handleOpenModal}
+          noticeIdBeingDeleted={noticeBeingDeleted?.noticeID}
+        />
       </Container>
     </>
 

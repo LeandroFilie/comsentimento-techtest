@@ -31,9 +31,13 @@ const containerVariant = {
 };
 
 export const Container = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 12px 16px;
   border: none;
   border-radius: 4px;
+  height: 44px;
 
   font-weight: 500;
   font-size: 1rem;
@@ -41,4 +45,10 @@ export const Container = styled.button`
   transition: all 0.2s;
 
   ${({ variant }) => containerVariant[variant] || containerVariant.default};
+
+  &[disabled]{
+    color: ${({ theme }) => theme.colors.gray[50]};
+    background: ${({ theme }) => theme.colors.gray[400]};
+    cursor: not-allowed;
+  }
 `;

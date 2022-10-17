@@ -1,6 +1,8 @@
 import { Link, useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import NoticesServices from '../../services/NoticesServices';
+
+import { Auth } from '../../context/AuthContext';
 
 import Header from '../../components/Header';
 import PageHeader from '../../components/PageHeader';
@@ -12,6 +14,7 @@ import { Container } from './style';
 import convertDateToEnUs from '../../utils/convertDateToEnUs';
 
 export default function EditNotice() {
+  const { handleLogout } = useContext(Auth);
   const [isLoading, setIsLoading] = useState(true);
   const [noticeFound, setNoticeFound] = useState({});
   const { id } = useParams();
@@ -64,10 +67,10 @@ export default function EditNotice() {
           Home
           <span />
         </Link>
-        <a href="/">
+        <p onClick={handleLogout} aria-hidden="true">
           Sair
           <span />
-        </a>
+        </p>
       </Header>
 
       <Container>

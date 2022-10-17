@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Header from '../../components/Header';
+
+import { Auth } from '../../context/AuthContext';
 import {
   Container, Title,
 } from './styles';
@@ -11,6 +13,7 @@ import ListNotice from '../../components/ListNotice';
 import Modal from '../../components/Modal';
 
 export default function Adm() {
+  const { handleLogout } = useContext(Auth);
   const [modalVisible, setModalVisible] = useState(false);
   const [noticeBeingDeleted, setNoticeBeingDeleted] = useState(null);
 
@@ -38,10 +41,10 @@ export default function Adm() {
           Home
           <span />
         </Link>
-        <a href="/">
+        <p onClick={handleLogout} aria-hidden="true">
           Sair
           <span />
-        </a>
+        </p>
       </Header>
 
       <Container>

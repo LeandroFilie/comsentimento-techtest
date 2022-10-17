@@ -27,7 +27,7 @@ export default function useAuth() {
   async function handleLogout() {
     setAuthenticated(false);
     localStorage.removeItem('token');
-    // redirecionar
+    navigate('/');
   }
 
   return {

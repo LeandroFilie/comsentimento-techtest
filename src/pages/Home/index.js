@@ -59,7 +59,7 @@ export default function Home() {
           <h2>Editais de Linhas de Pesquisa</h2>
         </TitleSection>
 
-        <ListNotice onOpenModal={handleOpenModal} />
+        <ListNotice onOpenModal={handleOpenModal} notDetailed />
 
       </ContainerNotice>
 

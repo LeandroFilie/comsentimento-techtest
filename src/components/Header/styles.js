@@ -40,7 +40,7 @@ export const Nav = styled.nav`
   align-items: center;
   gap: 1.5rem;
 
-  a {
+  a, p {
     font-size: 1.075rem;
     padding: 0.5rem;
 

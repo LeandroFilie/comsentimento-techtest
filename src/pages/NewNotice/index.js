@@ -1,12 +1,16 @@
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
 import Header from '../../components/Header';
 import { Container } from './style';
+
+import { Auth } from '../../context/AuthContext';
 
 import NoticeForm from '../../components/NoticeForm';
 import PageHeader from '../../components/PageHeader';
 import NoticesServices from '../../services/NoticesServices';
 
 export default function NewNotice() {
+  const { handleLogout } = useContext(Auth);
   async function handleSubmit(formData) {
     try {
       const notice = {
@@ -31,10 +35,10 @@ export default function NewNotice() {
           Home
           <span />
         </Link>
-        <a href="/">
+        <p onClick={handleLogout} aria-hidden="true">
           Sair
           <span />
-        </a>
+        </p>
       </Header>
 
       <Container>

@@ -6,7 +6,7 @@ import Loader from '../Loader';
 import EmptyResponse from '../EmptyResponse';
 import { Container } from './style';
 
-export default function ListNotice({ onOpenModal, noticeIdBeingDeleted }) {
+export default function ListNotice({ onOpenModal, noticeIdBeingDeleted, notDetailed }) {
   const [notices, setNotices] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -47,6 +47,7 @@ export default function ListNotice({ onOpenModal, noticeIdBeingDeleted }) {
             date={notice.noticeOpeningDate}
             isOpened={notice.noticeStatus === 'true'}
             onOpenModal={() => onOpenModal(notice)}
+            notDetailed={notDetailed}
           />
         ))
       ) : (
@@ -59,9 +60,11 @@ export default function ListNotice({ onOpenModal, noticeIdBeingDeleted }) {
 ListNotice.propTypes = {
   onOpenModal: PropTypes.func,
   noticeIdBeingDeleted: PropTypes.number,
+  notDetailed: PropTypes.bool,
 };
 
 ListNotice.defaultProps = {
   onOpenModal: undefined,
   noticeIdBeingDeleted: undefined,
+  notDetailed: false,
 };

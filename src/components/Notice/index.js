@@ -9,11 +9,11 @@ import editIcon from '../../assets/edit.svg';
 import trashIcon from '../../assets/trash.svg';
 
 export default function Notice({
-  id, name, description, date, isOpened, onOpenModal,
+  id, name, description, date, isOpened, onOpenModal, notDetailed,
 }) {
   const { authenticated } = useContext(Auth);
 
-  if (!authenticated) {
+  if (notDetailed) {
     return (
       <Container isOpened={isOpened} onClick={onOpenModal} authenticated={authenticated}>
         <h3>{name}</h3>
@@ -52,8 +52,10 @@ Notice.propTypes = {
   date: PropTypes.string.isRequired,
   isOpened: PropTypes.bool.isRequired,
   onOpenModal: PropTypes.func,
+  notDetailed: PropTypes.bool,
 };
 
 Notice.defaultProps = {
   onOpenModal: undefined,
+  notDetailed: false,
 };

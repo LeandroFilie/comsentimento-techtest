@@ -27,6 +27,10 @@ export const Container = styled.div`
     margin-top: 1rem;
   }
 
+  img {
+    margin-right: 0.5rem;
+  }
+
   ${({ type }) => containerVariants[type] || containerVariants.default}
 
 `;

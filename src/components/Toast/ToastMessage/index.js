@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 import { Container } from './styled';
 
+import xCircle from '../../../assets/x-circle.svg';
+import checkCircle from '../../../assets/check-circle.svg';
+
 export default function ToastMessage({ message, onRemoveMessage }) {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -25,6 +28,8 @@ export default function ToastMessage({ message, onRemoveMessage }) {
       tabIndex={0}
       role="button"
     >
+      {message.type === 'danger' && (<img src={xCircle} alt="X" />)}
+      {message.type === 'success' && (<img src={checkCircle} alt="Check" />)}
       <strong>{message.text}</strong>
     </Container>
   );

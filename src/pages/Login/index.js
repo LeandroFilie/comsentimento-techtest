@@ -9,11 +9,12 @@ import { Input } from '../../components/Input';
 import { Auth } from '../../context/AuthContext';
 
 export default function Login() {
-  const { authenticated, handleLogin } = useContext(Auth);
+  const { handleLogin } = useContext(Auth);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  console.log(authenticated);
+  const isFormValid = (email && password);
 
   function handleChangeEmail(event) {
     setEmail(event.target.value);
@@ -24,6 +25,7 @@ export default function Login() {
   }
 
   function handleSubmit(event) {
+    setIsSubmitting(true);
     event.preventDefault();
 
     handleLogin({ email, password });
@@ -59,7 +61,12 @@ export default function Login() {
           />
         </label>
 
-        <Button variant="default" label="Entrar" />
+        <Button
+          variant="default"
+          label="Entrar"
+          disabled={!isFormValid}
+          isLoading={isSubmitting}
+        />
       </Form>
     </Container>
   );

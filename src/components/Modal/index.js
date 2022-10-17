@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
 
 import { useEffect } from 'react';
 import {
@@ -10,6 +9,7 @@ import closeIcon from '../../assets/x.svg';
 
 import ModalDetail from './ModalDetail';
 import ModalDelete from './ModalDelete';
+import { ReactPortal } from '../ReactPortal';
 
 export default function Modal({
   visible, onClose, notice, mode, title,
@@ -22,17 +22,18 @@ export default function Modal({
     return null;
   }
 
-  return ReactDOM.createPortal(
-    <Overlay>
-      <Container>
-        <Header>
-          <h3>{title}</h3>
-          <span onClick={() => onClose()} aria-hidden="true"><img src={closeIcon} alt="Fechar" /></span>
-        </Header>
-        {mode === 'detail' ? <ModalDetail notice={notice} /> : <ModalDelete noticeID={notice.noticeID} onClose={onClose} />}
-      </Container>
-    </Overlay>,
-    document.getElementById('modal-root'),
+  return (
+    <ReactPortal containerId="modal-root">
+      <Overlay>
+        <Container>
+          <Header>
+            <h3>{title}</h3>
+            <span onClick={() => onClose()} aria-hidden="true"><img src={closeIcon} alt="Fechar" /></span>
+          </Header>
+          {mode === 'detail' ? <ModalDetail notice={notice} /> : <ModalDelete noticeID={notice.noticeID} onClose={onClose} />}
+        </Container>
+      </Overlay>
+    </ReactPortal>
   );
 }
 

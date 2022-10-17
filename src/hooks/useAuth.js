@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AuthServices from '../services/AuthServices';
 
 export default function useAuth() {
   const [authenticated, setAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
 
   async function handleLogin({ email, password }) {
     try {
@@ -12,6 +15,8 @@ export default function useAuth() {
       localStorage.setItem('token', JSON.stringify(response.message));
 
       setAuthenticated(true);
+
+      navigate('/adm');
     } catch (error) {
       console.log('Dados inválidos');
     } finally {

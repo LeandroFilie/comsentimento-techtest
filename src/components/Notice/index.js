@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
 import { Container } from './style';
+
+import { Auth } from '../../context/AuthContext';
 
 import editIcon from '../../assets/edit.svg';
 import trashIcon from '../../assets/trash.svg';
@@ -8,11 +11,11 @@ import trashIcon from '../../assets/trash.svg';
 export default function Notice({
   id, name, description, date, isOpened, onOpenModal,
 }) {
-  const authenticate = false;
+  const { authenticated } = useContext(Auth);
 
-  if (!authenticate) {
+  if (!authenticated) {
     return (
-      <Container isOpened={isOpened} onClick={onOpenModal} authenticate={authenticate}>
+      <Container isOpened={isOpened} onClick={onOpenModal} authenticated={authenticated}>
         <h3>{name}</h3>
         <p className="status">
           <span />
@@ -23,7 +26,7 @@ export default function Notice({
   }
 
   return (
-    <Container isOpened={isOpened} authenticate={authenticate}>
+    <Container isOpened={isOpened} authenticated={authenticated}>
       <div className="details">
         <h3>{name}</h3>
         <p>{description}</p>

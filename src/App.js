@@ -8,14 +8,14 @@ import defaultTheme from './styles/themes/default';
 
 function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <AuthProvider>
         <ThemeProvider theme={defaultTheme}>
           <GlobalStyle />
           <Router />
         </ThemeProvider>
-      </BrowserRouter>
-    </AuthProvider>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 

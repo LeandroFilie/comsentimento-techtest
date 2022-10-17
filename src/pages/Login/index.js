@@ -24,11 +24,13 @@ export default function Login() {
     setPassword(event.target.value);
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     setIsSubmitting(true);
     event.preventDefault();
 
-    handleLogin({ email, password });
+    await handleLogin({ email, password });
+
+    setIsSubmitting(false);
   }
 
   return (

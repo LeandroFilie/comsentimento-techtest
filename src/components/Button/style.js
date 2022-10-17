@@ -21,7 +21,11 @@ const containerVariant = {
   cancel: css`
     color: ${({ theme }) => theme.colors.gray[400]};
     background: transparent;
-    transition: all 0.2s;
+
+      &[disabled]{
+        color: ${({ theme }) => theme.colors.gray[400]} !important;
+        background: transparent  !important;
+      }
   `,
   danger: css`
     color: ${({ theme }) => theme.colors.gray[50]};

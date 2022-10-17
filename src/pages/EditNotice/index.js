@@ -11,6 +11,7 @@ import Loader from '../../components/Loader';
 import { Container } from './style';
 import convertDateToEnUs from '../../utils/convertDateToEnUs';
 import useAuth from '../../hooks/useAuth';
+import toast from '../../utils/toast';
 
 export default function EditNotice() {
   const { handleLogout } = useAuth();
@@ -34,8 +35,6 @@ export default function EditNotice() {
 
       const noticeWillEdited = await NoticesServices.getNoticeById(id);
 
-      console.log({ noticeWillEdited });
-
       if (noticeWillEdited.noticeTitle !== formData.title) {
         notice.noticeTitle = formData.title;
       }
@@ -52,11 +51,17 @@ export default function EditNotice() {
         notice.noticeStatus = formData.status;
       }
 
-      const response = await NoticesServices.updateNotice(id, notice);
+      await NoticesServices.updateNotice(id, notice);
 
-      console.log(response);
+      toast({
+        type: 'success',
+        text: 'Alterações salvas com sucesso',
+      });
     } catch (error) {
-      console.log('Ocorreu um erro ao editar o edital', error);
+      toast({
+        type: 'danger',
+        text: 'Ocorreu um erro ao salvar as alterações',
+      });
     }
   }
   return (

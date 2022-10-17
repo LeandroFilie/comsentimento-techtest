@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Container, Header, Form } from './styles';
 
 import logo from '../../assets/logo.png';
@@ -13,6 +15,16 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const auth = localStorage.getItem('token');
+
+    if (auth) {
+      navigate('/adm');
+    }
+  }, []);
 
   const isFormValid = (email && password);
 

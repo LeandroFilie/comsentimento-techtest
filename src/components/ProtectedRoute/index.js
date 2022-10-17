@@ -1,13 +1,11 @@
+/* eslint-disable no-unused-vars */
 import { Navigate } from 'react-router-dom';
 import PropType from 'prop-types';
 
-import useAuth from '../../hooks/useAuth';
-
-// eslint-disable-next-line react/prop-types
 export default function ProtectedRoute({ children }) {
-  const { authenticated } = useAuth();
+  const token = localStorage.getItem('token');
 
-  if (!authenticated) {
+  if (!token) {
     return <Navigate to="/" />;
   }
 

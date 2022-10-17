@@ -6,6 +6,7 @@ import NoticeForm from '../../components/NoticeForm';
 import PageHeader from '../../components/PageHeader';
 import NoticesServices from '../../services/NoticesServices';
 import useAuth from '../../hooks/useAuth';
+import toast from '../../utils/toast';
 
 export default function NewNotice() {
   const { handleLogout } = useAuth();
@@ -19,11 +20,16 @@ export default function NewNotice() {
         noticeStatus: formData.status,
       };
 
-      const response = await NoticesServices.createNotice(notice);
-
-      console.log(response);
+      await NoticesServices.createNotice(notice);
+      toast({
+        type: 'success',
+        text: 'Edital cadastrado com sucesso',
+      });
     } catch {
-      console.log('Ocorreu um erro ao cadastrar o edital');
+      toast({
+        type: 'danger',
+        text: 'Erro ao cadastrar o edital',
+      });
     }
   }
   return (

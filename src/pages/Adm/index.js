@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import Header from '../../components/Header';
 
-import { Auth } from '../../context/AuthContext';
 import {
   Container, Title,
 } from './styles';
@@ -11,9 +10,10 @@ import Button from '../../components/Button';
 
 import ListNotice from '../../components/ListNotice';
 import Modal from '../../components/Modal';
+import useAuth from '../../hooks/useAuth';
 
 export default function Adm() {
-  const { handleLogout } = useContext(Auth);
+  const { handleLogout } = useAuth();
   const [modalVisible, setModalVisible] = useState(false);
   const [noticeBeingDeleted, setNoticeBeingDeleted] = useState(null);
 

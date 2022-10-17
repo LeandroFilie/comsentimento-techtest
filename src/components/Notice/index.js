@@ -1,17 +1,15 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { useContext } from 'react';
 import { Container } from './style';
-
-import { Auth } from '../../context/AuthContext';
 
 import editIcon from '../../assets/edit.svg';
 import trashIcon from '../../assets/trash.svg';
+import useAuth from '../../hooks/useAuth';
 
 export default function Notice({
   id, name, description, date, isOpened, onOpenModal, notDetailed,
 }) {
-  const { authenticated } = useContext(Auth);
+  const { authenticated } = useAuth();
 
   if (notDetailed) {
     return (

@@ -1,15 +1,15 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { Container, Header, Form } from './styles';
 
 import logo from '../../assets/logo.png';
 import Button from '../../components/Button';
 import { Input } from '../../components/Input';
 
-import { Auth } from '../../context/AuthContext';
+import useAuth from '../../hooks/useAuth';
 
 export default function Login() {
-  const { handleLogin } = useContext(Auth);
+  const { handleLogin } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);

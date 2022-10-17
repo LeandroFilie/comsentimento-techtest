@@ -1,8 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import NoticesServices from '../../services/NoticesServices';
-
-import { Auth } from '../../context/AuthContext';
 
 import Header from '../../components/Header';
 import PageHeader from '../../components/PageHeader';
@@ -12,9 +10,10 @@ import Loader from '../../components/Loader';
 
 import { Container } from './style';
 import convertDateToEnUs from '../../utils/convertDateToEnUs';
+import useAuth from '../../hooks/useAuth';
 
 export default function EditNotice() {
-  const { handleLogout } = useContext(Auth);
+  const { handleLogout } = useAuth();
   const [isLoading, setIsLoading] = useState(true);
   const [noticeFound, setNoticeFound] = useState({});
   const { id } = useParams();

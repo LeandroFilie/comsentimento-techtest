@@ -37,6 +37,13 @@ export default function NoticeForm({ buttonLabel, onSubmit, noticeData }) {
       title, description, date, status,
     });
 
+    if (!noticeData) {
+      fieldTitle.current.value = '';
+      fieldDescription.current.value = '';
+      fielDate.current.value = '';
+      fielStatus.current.value = '';
+    }
+
     setIsSubmitting(true);
   }
 

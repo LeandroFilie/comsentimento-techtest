@@ -11,7 +11,7 @@ export default function Notice({ notice, onOpenModal, notDetailed }) {
 
   if (notDetailed) {
     return (
-      <Container isOpened={notice.noticeStatus === 'true'} onClick={onOpenModal} authenticated={authenticated}>
+      <Container isOpened={notice.noticeStatus === 'true'} onClick={onOpenModal} authenticated={authenticated} role="button">
         <h3>{notice.noticeTitle}</h3>
         <p className="status">
           <span />
@@ -33,8 +33,8 @@ export default function Notice({ notice, onOpenModal, notDetailed }) {
         </p>
       </div>
       <div className="actions">
-        <Link to={`/notice/${notice.noticeID}`}><img src={editIcon} alt="Editar" /></Link>
-        <span><img src={trashIcon} alt="Excluir" onClick={onOpenModal} aria-hidden="true" /></span>
+        <Link to={`/notice/${notice.noticeID}`} role="button"><img src={editIcon} alt="Editar" /></Link>
+        <span role="button"><img src={trashIcon} alt="Excluir" onClick={onOpenModal} aria-hidden="true" /></span>
       </div>
 
     </Container>

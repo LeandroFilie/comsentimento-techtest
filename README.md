@@ -46,7 +46,7 @@ $ cd tech-test-comsentimento
 $ yarn
 
 ```
-**Crie um arquivo <code>.env</code> na raiz do projeto e preencha com a autorização de seu usuário**
+**Crie um arquivo <code>.env</code> na raiz do projeto e preencha com o token gerado após a criação de seu usuário**
 ```bash
 REACT_APP_AUTHORIZATION_HEADER=coloquei_aqui_sua_chave
 ```

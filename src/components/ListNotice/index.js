@@ -18,7 +18,7 @@ export default function ListNotice({ onOpenModal, noticeIdBeingDeleted, notDetai
         setNotices(noticesList.notices);
         setLoading(false);
       } catch (error) {
-        console.log('error', error);
+        setNotices({});
       } finally {
         setLoading(false);
       }

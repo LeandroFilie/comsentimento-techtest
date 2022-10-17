@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 import NoticesServices from '../../services/NoticesServices';
+import toast from '../../utils/toast';
 import Button from '../Button';
 import { Content, Footer } from './style';
 
-// eslint-disable-next-line react/prop-types
 export default function ModalDelete({ onClose, noticeID }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -16,8 +16,16 @@ export default function ModalDelete({ onClose, noticeID }) {
       await NoticesServices.deleteNotice(id);
 
       onClose();
-    } catch (error) {
-      console.log(error);
+
+      toast({
+        type: 'success',
+        text: 'Edital removido com sucesso',
+      });
+    } catch {
+      toast({
+        type: 'danger',
+        text: 'Erro ao remover edital',
+      });
     }
   }
   return (

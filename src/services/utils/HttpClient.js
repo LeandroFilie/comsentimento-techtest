@@ -32,11 +32,16 @@ class HttpClient {
   async makeRequest(path, { body = null, method }) {
     const headers = new Headers();
 
+    const tokenAuthorization = localStorage.getItem('token');
+
     if (body) {
       headers.append('Content-type', 'application/json');
 
-      if (method === 'DELETE' || method === 'PUT') headers.append('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzYsImlhdCI6MTY2NTk0NjM1MywiZXhwIjoxNjY2MDMyNzUzfQ.jC6mCVAYLAww0LdBcRRHSyzT5NY-BEqOKtzGS4qXYTI');
-      else headers.append('Authorization', process.env.REACT_APP_AUTHORIZATION_HEADER);
+      if (method === 'DELETE' || method === 'PUT') {
+        headers.append('Authorization', tokenAuthorization);
+      } else {
+        headers.append('Authorization', process.env.REACT_APP_AUTHORIZATION_HEADER);
+      }
     }
 
     const response = await fetch(`${this.baseUrl}${path}`, {

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthServices from '../services/AuthServices';
+import toast from '../utils/toast';
 
 export default function useAuth() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -17,8 +18,11 @@ export default function useAuth() {
       setAuthenticated(true);
 
       navigate('/adm');
-    } catch (error) {
-      console.log('Dados inválidos');
+    } catch {
+      toast({
+        type: 'danger',
+        text: 'E-mail e/ou senha incorretos',
+      });
     } finally {
       setLoading(false);
     }

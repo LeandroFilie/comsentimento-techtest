@@ -35,7 +35,7 @@ export default function Notice({
       </div>
       <div className="actions">
         <Link to={`/notice/${id}`}><img src={editIcon} alt="Editar" /></Link>
-        <img src={trashIcon} alt="Excluir" onClick={onOpenModal} aria-hidden="true" />
+        <span><img src={trashIcon} alt="Excluir" onClick={onOpenModal} aria-hidden="true" /></span>
       </div>
 
     </Container>

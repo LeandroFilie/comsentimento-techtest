@@ -23,5 +23,6 @@ module.exports = {
     'react/jsx-no-bind': 'off',
     'class-methods-use-this': 'off',
     'no-restricted-globals': 'off',
+    'react/jsx-no-constructed-context-values': 'off',
   },
 };

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Container } from './style.js';
+import { Container } from './style';
 
 import Loader from '../Loader';
 
